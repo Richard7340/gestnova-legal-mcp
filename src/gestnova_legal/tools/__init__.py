@@ -4,6 +4,10 @@ from ._base import BaseTool
 from .meta import GetDisclaimerTool, ListJurisdictionsTool, ListLegalSectorsTool
 from .legislation import BuildSourceUrlTool, CheckNormVigenciaTool, SearchLegislationTool
 from .compliance import GetLegalRequirementsTool, GetLegalTemplateTool
+from .labor import AnalyzeLaborRelationTool
+from .contracts import AnalyzeClauseTool
+from .query import QueryLegalTopicTool
+from .seed import SeedLegalContentTool
 
 
 class PingTool(BaseTool):
@@ -19,12 +23,16 @@ class PingTool(BaseTool):
 def get_all_tools() -> list[BaseTool]:
     return [
         PingTool(),
-        ListJurisdictionsTool(),
-        ListLegalSectorsTool(),
-        GetDisclaimerTool(),
+        QueryLegalTopicTool(),
         SearchLegislationTool(),
         CheckNormVigenciaTool(),
         BuildSourceUrlTool(),
         GetLegalRequirementsTool(),
         GetLegalTemplateTool(),
+        AnalyzeLaborRelationTool(),
+        AnalyzeClauseTool(),
+        SeedLegalContentTool(),
+        ListJurisdictionsTool(),
+        ListLegalSectorsTool(),
+        GetDisclaimerTool(),
     ]
