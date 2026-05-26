@@ -1,0 +1,147 @@
+- rule: eu_regulation_gdpr
+  country: EU
+  effective_from: 2018-05-25
+  effective_until: null
+  source: "Reglamento UE 2016/679 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Reglamento General de Proteccion de Datos (GDPR)"
+    nombre_oficial: "Reglamento (UE) 2016/679 relativo a la proteccion de las personas fisicas en lo que respecta al tratamiento de datos personales y a la libre circulacion de estos datos"
+    ambito: "Tratamiento de datos personales en la UE o de residentes UE"
+    principios_clave:
+      - "Licitud, lealtad y transparencia"
+      - "Limitacion de la finalidad"
+      - "Minimizacion de datos"
+      - "Exactitud"
+      - "Limitacion del plazo de conservacion"
+      - "Integridad y confidencialidad"
+      - "Responsabilidad proactiva (accountability)"
+    derechos_interesado:
+      - "Acceso (art. 15)"
+      - "Rectificacion (art. 16)"
+      - "Supresion / derecho al olvido (art. 17)"
+      - "Limitacion del tratamiento (art. 18)"
+      - "Portabilidad (art. 20)"
+      - "Oposicion (art. 21)"
+    sanciones_max:
+      nivel_1: "10M EUR o 2% facturacion global"
+      nivel_2: "20M EUR o 4% facturacion global"
+    dpo_obligatorio:
+      - "Autoridades y organismos publicos"
+      - "Tratamiento a gran escala de categorias especiales"
+      - "Observacion habitual y sistematica de interesados a gran escala"
+
+- rule: eu_regulation_ai_act
+  country: EU
+  effective_from: 2024-08-01
+  effective_until: null
+  source: "Reglamento UE 2024/1689 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Reglamento de Inteligencia Artificial (AI Act)"
+    nombre_oficial: "Reglamento (UE) 2024/1689 por el que se establecen normas armonizadas en materia de inteligencia artificial"
+    entrada_progresiva:
+      - fecha: "2025-02-02"
+        contenido: "Prohibiciones de IA (Titulo II) + alfabetizacion IA (art. 4)"
+      - fecha: "2025-08-02"
+        contenido: "Modelos de IA de proposito general (Capitulo V) + gobernanza"
+      - fecha: "2026-08-02"
+        contenido: "Sistemas de alto riesgo del Anexo III + resto de obligaciones"
+      - fecha: "2027-08-02"
+        contenido: "Sistemas de alto riesgo del Anexo I (legislacion sectorial armonizada)"
+    clasificacion_riesgo:
+      - nivel: inaceptable
+        descripcion: "Prohibidos: scoring social, manipulacion subliminal, explotacion de vulnerabilidades, identificacion biometrica remota en tiempo real por fuerzas del orden (con excepciones)"
+      - nivel: alto
+        descripcion: "Sujetos a requisitos estrictos: gestion de riesgos, datos de entrenamiento, transparencia, supervision humana, precision, robustez, ciberseguridad"
+      - nivel: limitado
+        descripcion: "Obligaciones de transparencia: chatbots, deepfakes, sistemas de reconocimiento de emociones"
+      - nivel: minimo
+        descripcion: "Sin obligaciones adicionales: filtros de spam, videojuegos con IA"
+    sanciones_max:
+      prohibiciones: "35M EUR o 7% facturacion global"
+      alto_riesgo: "15M EUR o 3% facturacion global"
+      informacion_incorrecta: "7.5M EUR o 1% facturacion global"
+
+- rule: eu_regulation_dsa
+  country: EU
+  effective_from: 2024-02-17
+  effective_until: null
+  source: "Reglamento UE 2022/2065 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Ley de Servicios Digitales (DSA)"
+    nombre_oficial: "Reglamento (UE) 2022/2065 relativo a un mercado unico de servicios digitales"
+    ambito: "Servicios intermediarios en la UE (hosting, plataformas, motores de busqueda)"
+    obligaciones_clave:
+      - "Transparencia en la moderacion de contenidos"
+      - "Mecanismo de notificacion y actuacion para contenidos ilegales"
+      - "Prohibicion de patrones oscuros (dark patterns)"
+      - "Publicidad dirigida: prohibicion a menores, transparencia en criterios"
+      - "Evaluacion de riesgos sistemicos (plataformas muy grandes)"
+    plataformas_muy_grandes: ">45 millones usuarios activos mensuales en la UE"
+    sanciones_max: "6% facturacion global anual"
+    fechas:
+      vlops: "2023-08-25 (plataformas muy grandes)"
+      resto: "2024-02-17 (todos los intermediarios)"
+
+- rule: eu_regulation_dma
+  country: EU
+  effective_from: 2023-05-02
+  effective_until: null
+  source: "Reglamento UE 2022/1925 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Ley de Mercados Digitales (DMA)"
+    nombre_oficial: "Reglamento (UE) 2022/1925 sobre mercados disputables y equitativos en el sector digital"
+    ambito: "Guardianes de acceso (gatekeepers) — plataformas digitales principales"
+    criterios_gatekeeper:
+      - "Impacto significativo en el mercado interior (>7.500M EUR facturacion o >75.000M EUR capitalizacion)"
+      - "Servicio de plataforma basico utilizado por >45M usuarios finales activos/mes y >10.000 usuarios profesionales/ano en la UE"
+      - "Posicion afianzada y duradera (3 ultimos ejercicios)"
+    obligaciones_principales:
+      - "Permitir desinstalacion de apps preinstaladas"
+      - "Interoperabilidad con servicios de terceros"
+      - "No autopreferencia en rankings"
+      - "No combinar datos personales entre servicios sin consentimiento"
+      - "Permitir a usuarios profesionales acceder a sus datos"
+    sanciones_max: "10% facturacion global (20% en caso de reincidencia)"
+    gatekeepers_designados_2023:
+      - Alphabet
+      - Amazon
+      - Apple
+      - ByteDance
+      - Meta
+      - Microsoft
+
+- rule: eu_regulation_mica
+  country: EU
+  effective_from: 2024-12-30
+  effective_until: null
+  source: "Reglamento UE 2023/1114 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Reglamento de Mercados de Criptoactivos (MiCA)"
+    nombre_oficial: "Reglamento (UE) 2023/1114 relativo a los mercados de criptoactivos"
+    ambito: "Emision, oferta publica y admision a negociacion de criptoactivos, y servicios de criptoactivos"
+    entrada_progresiva:
+      - fecha: "2024-06-30"
+        contenido: "Titulo III (tokens referenciados a activos — ARTs) y Titulo IV (tokens de dinero electronico — EMTs)"
+      - fecha: "2024-12-30"
+        contenido: "Resto del reglamento: autorizacion de CASP, normas de conducta, prevencion de abuso de mercado"
+    categorias:
+      - tipo: "Utility tokens"
+        requisitos: "Libro blanco, notificacion a autoridad competente"
+      - tipo: "Asset-referenced tokens (ARTs)"
+        requisitos: "Autorizacion previa, reserva de activos, gobernanza, plan de recuperacion"
+      - tipo: "E-money tokens (EMTs)"
+        requisitos: "Emision solo por entidades de credito o de dinero electronico, reembolso al par"
+    casp_autorizacion:
+      descripcion: "Los proveedores de servicios de criptoactivos (CASP) requieren autorizacion"
+      servicios:
+        - "Custodia y administracion de criptoactivos"
+        - "Explotacion de plataforma de negociacion"
+        - "Canje de criptoactivos por fondos o por otros criptoactivos"
+        - "Ejecucion de ordenes"
+        - "Colocacion"
+        - "Asesoramiento"
+        - "Gestion de carteras"
+        - "Transferencia de criptoactivos"
+    sanciones_max:
+      personas_juridicas: "12.5M EUR o 2% facturacion global, o 3x beneficio obtenido"
+      personas_fisicas: "700.000 EUR"

@@ -1,0 +1,87 @@
+- rule: labor_vacaciones
+  country: ES
+  effective_from: 2015-10-24
+  effective_until: null
+  source: "Estatuto de los Trabajadores art. 38"
+  data:
+    titulo: "Vacaciones anuales retribuidas"
+    dias_naturales: 30
+    dias_habiles_equivalente: 22
+    detalles:
+      - "Periodo minimo de 30 dias naturales por ano trabajado"
+      - "No sustituibles por compensacion economica, salvo fin de contrato"
+      - "El calendario se fija por convenio colectivo o acuerdo individual"
+      - "El trabajador conocera las fechas al menos 2 meses antes del disfrute"
+    norma: "Real Decreto Legislativo 2/2015, art. 38"
+
+- rule: labor_periodo_prueba
+  country: ES
+  effective_from: 2015-10-24
+  effective_until: null
+  source: "Estatuto de los Trabajadores art. 14"
+  data:
+    titulo: "Periodo de prueba"
+    duracion_maxima:
+      tecnicos_titulados: "6 meses"
+      demas_trabajadores: "2 meses"
+      empresas_menos_25: "3 meses para no titulados"
+    reglas:
+      - "Debe constar por escrito"
+      - "Nulo si el trabajador ya desempeno las mismas funciones en la empresa"
+      - "Durante el periodo, mismos derechos y obligaciones que contrato definitivo"
+      - "Resolucion libre por cualquiera de las partes sin preaviso ni indemnizacion"
+      - "Computa a efectos de antiguedad"
+      - "Situaciones de IT, nacimiento, etc. interrumpen el computo si hay acuerdo"
+    norma: "Real Decreto Legislativo 2/2015, art. 14"
+
+- rule: labor_jornada
+  country: ES
+  effective_from: 2015-10-24
+  effective_until: null
+  source: "Estatuto de los Trabajadores art. 34"
+  data:
+    titulo: "Jornada de trabajo"
+    horas_semanales_max: 40
+    horas_diarias_max: 9
+    distribucion: "en computo anual segun convenio"
+    descansos:
+      entre_jornadas: "12 horas minimo"
+      semanal: "dia y medio ininterrumpido, acumulable por periodos de 14 dias"
+      jornada_continuada_6h: "descanso minimo de 15 minutos"
+      menores_18: "30 minutos si jornada continuada supera 4.5 horas"
+    horas_extraordinarias:
+      max_anual: 80
+      compensacion: "retribucion o descanso equivalente en los 4 meses siguientes"
+      voluntarias: "salvo pacto en convenio o contrato"
+    registro_jornada:
+      obligatorio: true
+      norma: "RDL 8/2019 art. 10"
+    norma: "Real Decreto Legislativo 2/2015, art. 34"
+
+- rule: labor_contrato_tipos
+  country: ES
+  effective_from: 2022-03-30
+  effective_until: null
+  source: "RDL 32/2021 reforma laboral"
+  data:
+    titulo: "Tipos de contrato de trabajo (reforma 2021)"
+    tipos:
+      - tipo: indefinido_ordinario
+        descripcion: "Contrato por defecto. Jornada completa o parcial"
+        norma: "ET art. 15.1"
+      - tipo: indefinido_fijo_discontinuo
+        descripcion: "Trabajos estacionales o vinculados a contratas"
+        norma: "ET art. 16 (reformado RDL 32/2021)"
+      - tipo: temporal_por_circunstancias_produccion
+        descripcion: "Incremento ocasional e imprevisible. Max 6 meses (ampliable a 12 por convenio)"
+        norma: "ET art. 15.2"
+      - tipo: temporal_por_sustitucion
+        descripcion: "Sustitucion de trabajador con reserva de puesto"
+        norma: "ET art. 15.3"
+      - tipo: formacion_en_alternancia
+        descripcion: "Actividad formativa en alternancia con trabajo. 16-30 anos"
+        norma: "ET art. 11.2 (reformado RDL 32/2021)"
+      - tipo: formacion_para_practica_profesional
+        descripcion: "Practica profesional tras titulo. Max 1 ano"
+        norma: "ET art. 11.3 (reformado RDL 32/2021)"
+    nota: "Se eliminan los contratos de obra y servicio desde 30/03/2022"

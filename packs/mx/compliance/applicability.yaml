@@ -1,0 +1,29 @@
+- rule: compliance_applicability_mx
+  country: MX
+  effective_from: 2023-10-23
+  effective_until: null
+  source: "LFPDPPP DOF 05/07/2010 + LFT + NOM-035-STPS-2018 + LSS"
+  data:
+    description: "Obligaciones de compliance por plantilla en Mexico"
+    thresholds:
+      - min_workers: 1
+        obligations:
+          - id: aviso-privacidad
+            name: "Aviso de privacidad (datos personales)"
+            norma: "Ley Federal de Proteccion de Datos Personales en Posesion de los Particulares (LFPDPPP) art. 15-18"
+          - id: reglamento-interior
+            name: "Reglamento interior de trabajo"
+            norma: "LFT art. 422-425"
+          - id: alta-imss
+            name: "Alta patronal y de trabajadores en IMSS"
+            norma: "Ley del Seguro Social arts. 12, 15"
+      - min_workers: 16
+        obligations:
+          - id: nom-035-nivel2
+            name: "NOM-035-STPS-2018 Nivel 2: identificacion y analisis de factores de riesgo psicosocial"
+            norma: "NOM-035-STPS-2018 numerales 7.2, 7.3, 7.4"
+      - min_workers: 51
+        obligations:
+          - id: nom-035-nivel3
+            name: "NOM-035-STPS-2018 Nivel 3: evaluacion del entorno organizacional + medidas de control"
+            norma: "NOM-035-STPS-2018 numerales 7.5, 7.6, 7.7, 7.8, 7.9"

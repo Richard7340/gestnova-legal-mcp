@@ -1,0 +1,52 @@
+- rule: compliance_applicability_es
+  country: ES
+  effective_from: 2023-12-13
+  effective_until: null
+  source: "RGPD 2016/679 + LOPDGDD 3/2018 + Ley 31/1995 PRL + RDL 8/2019 + RD 901/2020"
+  data:
+    description: "Obligaciones de compliance por sector y plantilla"
+    thresholds:
+      - min_workers: 1
+        obligations:
+          - id: lopd-rgpd
+            name: "Proteccion de datos (RGPD + LOPDGDD)"
+            norma: "Reglamento UE 2016/679 + LO 3/2018"
+          - id: prl-basico
+            name: "Prevencion de riesgos laborales basica"
+            norma: "Ley 31/1995"
+          - id: registro-horario
+            name: "Registro de jornada obligatorio"
+            norma: "RDL 8/2019 art. 10"
+          - id: prevencion-riesgos-laborales
+            name: "Plan de prevencion de riesgos laborales"
+            norma: "Ley 31/1995 art. 16"
+      - min_workers: 6
+        obligations:
+          - id: delegado-prevencion
+            name: "Delegado de prevencion"
+            norma: "Ley 31/1995 art. 35"
+      - min_workers: 50
+        obligations:
+          - id: plan-igualdad
+            name: "Plan de igualdad obligatorio"
+            norma: "RD 901/2020 + LO 3/2007"
+          - id: canal-denuncias
+            name: "Canal de denuncias interno"
+            norma: "Ley 2/2023 de proteccion al informante"
+          - id: comite-empresa
+            name: "Comite de empresa"
+            norma: "ET art. 63"
+      - min_workers: 250
+        obligations:
+          - id: estado-info-no-financiera
+            name: "Estado de informacion no financiera"
+            norma: "Ley 11/2018"
+          - id: compliance-penal
+            name: "Programa de compliance penal"
+            norma: "CP art. 31 bis"
+    sector_obligations:
+      - sector: regulado
+        obligations:
+          - id: compliance-penal
+            name: "Programa de compliance penal"
+            norma: "CP art. 31 bis"

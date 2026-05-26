@@ -1,0 +1,59 @@
+- rule: fiscal_calendar_es
+  country: ES
+  effective_from: 2024-01-01
+  effective_until: null
+  source: "AEAT - Calendario del contribuyente + LGT 58/2003 + Ley 37/1992 IVA + Ley 35/2006 IRPF + Ley 27/2014 IS"
+  data:
+    titulo: "Calendario fiscal espanol — modelos principales"
+    modelos:
+      - modelo: "303"
+        nombre: "Autoliquidacion IVA"
+        periodicidad: trimestral
+        plazos:
+          T1: "1-20 abril"
+          T2: "1-20 julio"
+          T3: "1-20 octubre"
+          T4: "1-30 enero (del ano siguiente)"
+        nota: "Grandes empresas (>6.010.121,04 EUR facturacion): mensual"
+      - modelo: "111"
+        nombre: "Retenciones e ingresos a cuenta IRPF (rendimientos trabajo, actividades profesionales)"
+        periodicidad: trimestral
+        plazos:
+          T1: "1-20 abril"
+          T2: "1-20 julio"
+          T3: "1-20 octubre"
+          T4: "1-20 enero (del ano siguiente)"
+        nota: "Grandes empresas: mensual (del 1 al 20 del mes siguiente)"
+      - modelo: "130"
+        nombre: "Pago fraccionado IRPF (estimacion directa)"
+        periodicidad: trimestral
+        plazos:
+          T1: "1-20 abril"
+          T2: "1-20 julio"
+          T3: "1-20 octubre"
+          T4: "1-30 enero (del ano siguiente)"
+        nota: "Solo autonomos en estimacion directa. No aplica si >70% ingresos con retencion"
+      - modelo: "190"
+        nombre: "Resumen anual de retenciones e ingresos a cuenta IRPF"
+        periodicidad: anual
+        plazos:
+          anual: "1-31 enero"
+        nota: "Resumen del modelo 111. Obligatorio aunque no haya habido retenciones"
+      - modelo: "200"
+        nombre: "Declaracion del Impuesto sobre Sociedades"
+        periodicidad: anual
+        plazos:
+          anual: "1-25 julio (periodo impositivo coincidente con ano natural)"
+        nota: "25 dias naturales siguientes a los 6 meses posteriores a la conclusion del periodo impositivo"
+      - modelo: "390"
+        nombre: "Resumen anual IVA"
+        periodicidad: anual
+        plazos:
+          anual: "1-30 enero"
+        nota: "Resumen del modelo 303. Exentos los que presenten SII"
+      - modelo: "100"
+        nombre: "Declaracion de la Renta (IRPF)"
+        periodicidad: anual
+        plazos:
+          anual: "abril - 30 junio"
+        nota: "Campana anual. Resultado a ingresar con domiciliacion hasta 25 junio"

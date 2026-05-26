@@ -1,0 +1,81 @@
+- rule: contract_checklist_laboral
+  country: ES
+  effective_from: 2022-03-30
+  effective_until: null
+  source: "ET arts. 2-8 + RDL 32/2021 + RD 1659/1998"
+  data:
+    titulo: "Checklist contrato de trabajo"
+    clausulas_obligatorias:
+      - clausula: identificacion_partes
+        descripcion: "Datos completos del empresario y trabajador (nombre, NIF/NIE, domicilio)"
+      - clausula: tipo_contrato
+        descripcion: "Modalidad contractual segun art. 15 ET (indefinido, temporal, formativo)"
+      - clausula: fecha_inicio
+        descripcion: "Fecha de comienzo de la relacion laboral"
+      - clausula: duracion
+        descripcion: "Indefinido o temporal con causa y duracion estimada"
+      - clausula: periodo_prueba
+        descripcion: "Duracion del periodo de prueba (si se pacta, por escrito)"
+      - clausula: categoria_profesional
+        descripcion: "Grupo profesional y funciones del trabajador"
+      - clausula: retribucion
+        descripcion: "Salario base y complementos, periodicidad del pago"
+      - clausula: jornada
+        descripcion: "Jornada de trabajo y distribucion horaria"
+      - clausula: vacaciones
+        descripcion: "Duracion de las vacaciones anuales"
+      - clausula: centro_trabajo
+        descripcion: "Lugar de prestacion de servicios"
+      - clausula: convenio_aplicable
+        descripcion: "Convenio colectivo de aplicacion"
+    clausulas_recomendadas:
+      - clausula: confidencialidad
+        descripcion: "Deber de secreto sobre informacion empresarial"
+      - clausula: no_competencia_post
+        descripcion: "Pacto de no competencia post-contractual (max 2 anos tecnicos, 6 meses resto)"
+      - clausula: exclusividad
+        descripcion: "Pacto de plena dedicacion con compensacion economica"
+      - clausula: teletrabajo
+        descripcion: "Condiciones de trabajo a distancia (>30% jornada requiere acuerdo escrito, Ley 10/2021)"
+      - clausula: proteccion_datos
+        descripcion: "Informacion sobre tratamiento de datos personales del empleado"
+      - clausula: propiedad_intelectual
+        descripcion: "Cesion de derechos sobre creaciones realizadas durante la relacion laboral"
+
+- rule: contract_checklist_mercantil
+  country: ES
+  effective_from: 2015-01-01
+  effective_until: null
+  source: "Codigo de Comercio + CC arts. 1254-1258 + Ley 3/2004 morosidad"
+  data:
+    titulo: "Checklist contrato mercantil (prestacion de servicios / compraventa)"
+    clausulas_obligatorias:
+      - clausula: identificacion_partes
+        descripcion: "Razon social, CIF, domicilio, representante legal y poder"
+      - clausula: objeto_contrato
+        descripcion: "Descripcion clara del servicio o bien"
+      - clausula: precio_y_forma_pago
+        descripcion: "Importe, desglose IVA, plazos de pago (max 60 dias Ley 3/2004)"
+      - clausula: duracion_y_terminacion
+        descripcion: "Plazo, renovacion automatica, causas de resolucion anticipada"
+      - clausula: obligaciones_partes
+        descripcion: "Entregables, niveles de servicio, plazos"
+      - clausula: responsabilidad
+        descripcion: "Limites de responsabilidad y seguros"
+    clausulas_recomendadas:
+      - clausula: confidencialidad
+        descripcion: "NDA reciproco con penalidad por incumplimiento"
+      - clausula: propiedad_intelectual
+        descripcion: "Titularidad de los resultados del trabajo"
+      - clausula: proteccion_datos
+        descripcion: "Contrato de encargado del tratamiento si aplica (art. 28 RGPD)"
+      - clausula: no_competencia
+        descripcion: "Restriccion de actividades competitivas durante la vigencia"
+      - clausula: resolucion_conflictos
+        descripcion: "Jurisdiccion competente o clausula arbitral"
+      - clausula: fuerza_mayor
+        descripcion: "Definicion y efectos de eventos de fuerza mayor"
+      - clausula: penalizaciones
+        descripcion: "Penalidades por retrasos o incumplimientos de SLA"
+      - clausula: anticorrupcion
+        descripcion: "Compromiso de cumplimiento normativo y etico"

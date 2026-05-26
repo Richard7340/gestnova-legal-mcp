@@ -1,0 +1,60 @@
+- rule: labor_despido_procedimientos
+  country: ES
+  effective_from: 2015-10-24
+  effective_until: null
+  source: "Estatuto de los Trabajadores arts. 49-56 + Ley 36/2011 LRJS"
+  data:
+    titulo: "Procedimientos de despido en Espana"
+    tipos:
+      - tipo: despido_objetivo
+        causas:
+          - "Ineptitud del trabajador conocida o sobrevenida (art. 52.a)"
+          - "Falta de adaptacion a modificaciones tecnicas en 2 meses (art. 52.b)"
+          - "Causas economicas, tecnicas, organizativas o de produccion (art. 52.c)"
+          - "Faltas de asistencia intermitentes — derogada por RDL 4/2020 (art. 52.d)"
+        indemnizacion: "20 dias por ano trabajado, max 12 mensualidades"
+        preaviso: "15 dias"
+        forma: "Comunicacion escrita expresando la causa y poniendo a disposicion la indemnizacion"
+        plazo_impugnacion: "20 dias habiles desde la notificacion"
+      - tipo: despido_disciplinario
+        causas:
+          - "Faltas repetidas e injustificadas de asistencia o puntualidad (art. 54.2.a)"
+          - "Indisciplina o desobediencia en el trabajo (art. 54.2.b)"
+          - "Ofensas verbales o fisicas (art. 54.2.c)"
+          - "Transgresion de la buena fe contractual o abuso de confianza (art. 54.2.d)"
+          - "Disminucion continuada y voluntaria en el rendimiento (art. 54.2.e)"
+          - "Embriaguez habitual o toxicomania con repercusion negativa (art. 54.2.f)"
+          - "Acoso por razon de raza, sexo, religion, discapacidad, etc. (art. 54.2.g)"
+        indemnizacion:
+          procedente: "0 (no hay indemnizacion)"
+          improcedente: "33 dias por ano, max 24 mensualidades (contratos post 12/02/2012); 45 dias por ano, max 42 mensualidades (contratos anteriores, parte proporcional)"
+        preaviso: "No exigido legalmente"
+        forma: "Carta de despido escrita con hechos y fecha de efectos"
+        plazo_impugnacion: "20 dias habiles desde la fecha de efectos"
+      - tipo: despido_colectivo_ere
+        causas:
+          - "Economicas: perdidas actuales o previstas, o disminucion persistente de ingresos o ventas durante 3 trimestres consecutivos"
+          - "Tecnicas: cambios en medios o instrumentos de produccion"
+          - "Organizativas: cambios en los sistemas y metodos de trabajo o en la organizacion de la produccion"
+          - "De produccion: cambios en la demanda de productos o servicios"
+        umbrales:
+          - "10 trabajadores en empresas de menos de 100"
+          - "10% de la plantilla en empresas de 100 a 300"
+          - "30 trabajadores en empresas de mas de 300"
+        indemnizacion: "20 dias por ano, max 12 mensualidades (minimo legal, negociable al alza)"
+        preaviso: "30 dias tras la comunicacion de la decision a los representantes"
+        procedimiento:
+          - "Periodo de consultas con representantes legales (max 30 dias, 15 si <50 trabajadores)"
+          - "Comunicacion a la autoridad laboral"
+          - "Informe de la Inspeccion de Trabajo"
+          - "Plan de recolocacion externa si > 50 afectados"
+        plazo_impugnacion: "20 dias habiles (individual) o accion colectiva sin plazo de caducidad"
+      - tipo: extincion_voluntad_trabajador
+        causas:
+          - "Modificaciones sustanciales de condiciones de trabajo que menoscaben dignidad (art. 50.1.a)"
+          - "Falta de pago o retrasos continuados en el abono del salario (art. 50.1.b)"
+          - "Cualquier otro incumplimiento grave del empresario (art. 50.1.c)"
+        indemnizacion: "33 dias por ano, max 24 mensualidades (misma que despido improcedente)"
+        preaviso: "No aplica (resolucion judicial)"
+        procedimiento: "Demanda ante el Juzgado de lo Social"
+        plazo_impugnacion: "1 ano (accion ordinaria, no caducidad de 20 dias)"

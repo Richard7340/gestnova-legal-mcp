@@ -1,0 +1,44 @@
+- rule: eu_transposition_map
+  country: ES
+  effective_from: 2024-01-01
+  effective_until: null
+  source: "Transposiciones publicadas en BOE hasta 2024"
+  data:
+    titulo: "Mapa de transposicion de normativa UE a derecho espanol"
+    mappings:
+      - eu_norm: "Reglamento UE 2016/679 (GDPR)"
+        eu_type: reglamento
+        es_norm: "LO 3/2018 (LOPDGDD)"
+        es_date: "2018-12-06"
+        estado: vigente
+        nota: "GDPR es directamente aplicable; LOPDGDD complementa y adapta al derecho espanol"
+      - eu_norm: "Directiva UE 2019/1937 (Whistleblower)"
+        eu_type: directiva
+        es_norm: "Ley 2/2023 reguladora de la proteccion de las personas que informen sobre infracciones normativas y de lucha contra la corrupcion"
+        es_date: "2023-02-21"
+        estado: vigente
+        nota: "Transpuesta con retraso. Obligatorio para empresas >50 trabajadores"
+      - eu_norm: "Reglamento UE 2024/1689 (AI Act)"
+        eu_type: reglamento
+        es_norm: "Pendiente de desarrollo reglamentario nacional"
+        es_date: null
+        estado: pendiente
+        nota: "Reglamento directamente aplicable. Entrada progresiva 2024-2027. Espana creo la AESIA (RD 729/2023) como autoridad supervisora"
+      - eu_norm: "Directiva 2011/83/UE (Consumer Rights)"
+        eu_type: directiva
+        es_norm: "RDL 1/2007 TRLGDCU (modificado por Ley 3/2014)"
+        es_date: "2014-03-28"
+        estado: vigente
+        nota: "Desistimiento 14 dias naturales, informacion precontractual reforzada"
+      - eu_norm: "Reglamento UE 2022/2065 (DSA)"
+        eu_type: reglamento
+        es_norm: "Aplicacion directa + RD pendiente de designacion de Coordinador de Servicios Digitales"
+        es_date: null
+        estado: parcial
+        nota: "CNMC designada como Coordinador de Servicios Digitales (DSC). Plenamente aplicable desde 17/02/2024"
+      - eu_norm: "Reglamento UE 2023/1114 (MiCA)"
+        eu_type: reglamento
+        es_norm: "Aplicacion directa. CNMV + Banco de Espana como autoridades competentes"
+        es_date: "2024-12-30"
+        estado: vigente
+        nota: "Titulo III y IV aplicables desde 30/06/2024. Resto desde 30/12/2024. Sustituye regimen transitorio CNMV"

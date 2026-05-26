@@ -1,0 +1,55 @@
+- rule: labor_vacaciones_mx
+  country: MX
+  effective_from: 2023-01-01
+  effective_until: null
+  source: "Ley Federal del Trabajo art. 76 (reformado DOF 27/12/2022)"
+  data:
+    titulo: "Vacaciones anuales en Mexico"
+    primer_ano: 12
+    tabla_progresiva:
+      - antiguedad: "1 ano"
+        dias: 12
+      - antiguedad: "2 anos"
+        dias: 14
+      - antiguedad: "3 anos"
+        dias: 16
+      - antiguedad: "4 anos"
+        dias: 18
+      - antiguedad: "5 anos"
+        dias: 20
+      - antiguedad: "6-10 anos"
+        dias: "22 (+ 2 por cada 5 anos adicionales)"
+      - antiguedad: "11-15 anos"
+        dias: 24
+      - antiguedad: "16-20 anos"
+        dias: 26
+    prima_vacacional:
+      porcentaje: 25
+      base: "salarios correspondientes a los dias de vacaciones"
+      norma: "LFT art. 80"
+    reglas:
+      - "Los trabajadores deben disfrutar de un periodo continuo minimo de 12 dias"
+      - "Las vacaciones no pueden compensarse con remuneracion (salvo terminacion)"
+      - "Deben concederse dentro de los 6 meses siguientes al cumplimiento del ano de servicios"
+    nota: "Reforma 2022: se duplicaron los dias (antes eran 6 el primer ano). Entrada en vigor 01/01/2023"
+
+- rule: labor_aguinaldo_mx
+  country: MX
+  effective_from: 1970-05-01
+  effective_until: null
+  source: "Ley Federal del Trabajo art. 87"
+  data:
+    titulo: "Aguinaldo (gratificacion anual)"
+    dias_minimos: 15
+    base_calculo: "salario diario del trabajador"
+    fecha_limite_pago: "20 de diciembre de cada ano"
+    proporcional: "Trabajadores con menos de 1 ano tienen derecho a parte proporcional"
+    reglas:
+      - "Minimo equivalente a 15 dias de salario"
+      - "Muchos contratos colectivos establecen montos superiores (30, 40 o mas dias)"
+      - "El salario base es el ordinario, no incluye horas extra ni gratificaciones"
+      - "Los trabajadores de confianza tambien tienen derecho al aguinaldo"
+      - "Trabajadores eventuales tienen derecho a la parte proporcional"
+    tratamiento_fiscal:
+      exencion: "Hasta 30 dias de UMA (Unidad de Medida y Actualizacion)"
+      norma: "LISR art. 93 fraccion XIV"

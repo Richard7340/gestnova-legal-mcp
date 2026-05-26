@@ -1,0 +1,74 @@
+- rule: eu_directive_whistleblower
+  country: EU
+  effective_from: 2021-12-17
+  effective_until: null
+  source: "Directiva UE 2019/1937 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Directiva de proteccion al denunciante (Whistleblower)"
+    nombre_oficial: "Directiva (UE) 2019/1937 relativa a la proteccion de las personas que informen sobre infracciones del Derecho de la Union"
+    ambito: "Infracciones del Derecho de la UE en areas como contratacion publica, servicios financieros, seguridad de productos, medio ambiente, proteccion del consumidor, proteccion de datos"
+    obligaciones_principales:
+      - "Canal interno de denuncias confidencial"
+      - "Acuse de recibo en 7 dias"
+      - "Respuesta al denunciante en max 3 meses"
+      - "Prohibicion de represalias"
+      - "Proteccion de la identidad del denunciante"
+    ambito_personal:
+      - "Empleados (actuales y anteriores)"
+      - "Candidatos a empleo"
+      - "Voluntarios y becarios"
+      - "Contratistas, subcontratistas y proveedores"
+      - "Accionistas y miembros de organos de administracion"
+    umbrales_canal_interno:
+      sector_privado: "50 o mas trabajadores"
+      sector_publico: "Todos los municipios >10.000 habitantes"
+    plazo_transposicion: "2021-12-17"
+    transposicion_es: "Ley 2/2023, de 20 de febrero"
+
+- rule: eu_directive_copyright_dsm
+  country: EU
+  effective_from: 2021-06-07
+  effective_until: null
+  source: "Directiva UE 2019/790 del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Directiva de derechos de autor en el mercado unico digital"
+    nombre_oficial: "Directiva (UE) 2019/790 sobre los derechos de autor y derechos afines en el mercado unico digital"
+    articulos_clave:
+      - articulo: "art. 15"
+        titulo: "Derecho afin para editores de prensa"
+        descripcion: "Proteccion de publicaciones de prensa en lo relativo a usos en linea por proveedores de servicios de la sociedad de la informacion. Duracion: 2 anos desde publicacion"
+      - articulo: "art. 17"
+        titulo: "Uso de contenidos protegidos por proveedores de contenidos en linea"
+        descripcion: "Plataformas como YouTube son responsables del contenido subido por usuarios. Deben obtener licencia o demostrar que realizaron los mejores esfuerzos para obtenerla y actuaron de forma expeditiva ante notificaciones"
+    excepciones_obligatorias:
+      - "Mineria de textos y datos para investigacion (art. 3)"
+      - "Mineria de textos y datos general con opt-out (art. 4)"
+      - "Uso con fines educativos digitales transfronterizos (art. 5)"
+      - "Conservacion del patrimonio cultural (art. 6)"
+    plazo_transposicion: "2021-06-07"
+    transposicion_es: "RDL 24/2021, de 2 de noviembre (parcial, pendiente ley completa)"
+
+- rule: eu_directive_services
+  country: EU
+  effective_from: 2009-12-28
+  effective_until: null
+  source: "Directiva 2006/123/CE del Parlamento Europeo y del Consejo"
+  data:
+    titulo: "Directiva de Servicios (Bolkestein)"
+    nombre_oficial: "Directiva 2006/123/CE relativa a los servicios en el mercado interior"
+    ambito: "Servicios prestados a cambio de una contrapartida economica (excepto los excluidos)"
+    principios_clave:
+      - "Libertad de establecimiento"
+      - "Libre prestacion de servicios"
+      - "Simplificacion administrativa (ventanilla unica)"
+      - "Eliminacion de requisitos discriminatorios, injustificados o desproporcionados"
+    exclusiones:
+      - "Servicios financieros"
+      - "Servicios de transporte"
+      - "Servicios de empresas de trabajo temporal"
+      - "Servicios sanitarios"
+      - "Servicios audiovisuales"
+      - "Juegos de azar"
+      - "Actividades vinculadas al ejercicio de la autoridad publica"
+    transposicion_es: "Ley 17/2009 sobre libre acceso a actividades de servicios + Ley 25/2009 (ley omnibus)"
+    ventanilla_unica: "Cada Estado miembro debe disponer de una ventanilla unica electronica para tramites de servicios"
