@@ -1,0 +1,95 @@
+- rule: tech_rgpd_obligaciones
+  country: ES
+  effective_from: 2018-12-07
+  effective_until: null
+  source: "LOPDGDD (LO 3/2018) + RGPD (Reg UE 2016/679)"
+  data:
+    norma: "Ley Organica 3/2018 de Proteccion de Datos y Garantia de los Derechos Digitales"
+    abreviatura: "LOPDGDD"
+    eli: "/eli/es/lo/2018/12/05/3/con"
+    obligaciones_principales:
+      - titulo: "Base juridica del tratamiento"
+        articulo: "RGPD art. 6"
+        detalle: "Todo tratamiento necesita base juridica: consentimiento, contrato, obligacion legal, interes vital, interes publico, interes legitimo"
+      - titulo: "Consentimiento"
+        articulo: "RGPD art. 7 + LOPDGDD art. 6"
+        detalle: "Libre, especifico, informado e inequivoco. Debe poder retirarse. Menores: 14 anos en Espana"
+      - titulo: "Derechos ARSULOP"
+        articulo: "RGPD arts. 15-22 + LOPDGDD arts. 12-18"
+        detalle: "Acceso, Rectificacion, Supresion, Limitacion, Portabilidad, Oposicion. Plazo respuesta: 1 mes"
+      - titulo: "DPD (Delegado Proteccion Datos)"
+        articulo: "RGPD art. 37 + LOPDGDD art. 34"
+        detalle: "Obligatorio: administraciones publicas, tratamiento masivo, datos especiales. Recomendado >250 empleados"
+      - titulo: "Registro Actividades Tratamiento (RAT)"
+        articulo: "RGPD art. 30"
+        detalle: "Obligatorio si >250 empleados o tratamiento no ocasional. En la practica, recomendado siempre"
+      - titulo: "Brechas de seguridad"
+        articulo: "RGPD arts. 33-34"
+        detalle: "Notificar a AEPD en 72 horas. Si alto riesgo para interesados, notificarles tambien"
+    sanciones:
+      - nivel: "Infracciones leves"
+        importe: "Hasta 40.000 EUR (LOPDGDD art. 76)"
+      - nivel: "Infracciones graves"
+        importe: "Hasta 300.000 EUR (LOPDGDD art. 77)"
+      - nivel: "Infracciones muy graves"
+        importe: "Hasta 20M EUR o 4% facturacion global (RGPD art. 83)"
+
+- rule: tech_cookies
+  country: ES
+  effective_from: 2002-07-12
+  effective_until: null
+  source: "LSSI (Ley 34/2002) art. 22.2 + Guia AEPD sobre cookies 2023"
+  data:
+    norma: "Ley de Servicios de la Sociedad de la Informacion"
+    abreviatura: "LSSI"
+    eli: "/eli/es/l/2002/07/11/34/con"
+    articulo: "22.2"
+    contenido: "Uso de cookies requiere consentimiento informado del usuario"
+    obligaciones:
+      - "Informar de forma clara sobre las cookies utilizadas y su finalidad"
+      - "Obtener consentimiento ANTES de instalar cookies no esenciales"
+      - "Panel de configuracion con opcion de rechazar por categorias"
+      - "Cookies tecnicas/esenciales: NO necesitan consentimiento"
+      - "Cookies analiticas, publicitarias, de redes sociales: SI necesitan consentimiento"
+      - "Registro del consentimiento obtenido"
+      - "Renovar consentimiento cada 24 meses maximo"
+    tipos_cookies:
+      - tipo: "Tecnicas/esenciales"
+        consentimiento: false
+        ejemplo: "Sesion, carrito de compra, seguridad"
+      - tipo: "Analiticas"
+        consentimiento: true
+        ejemplo: "Google Analytics, estadisticas de uso"
+      - tipo: "Publicitarias"
+        consentimiento: true
+        ejemplo: "Tracking publicitario, retargeting"
+      - tipo: "Redes sociales"
+        consentimiento: true
+        ejemplo: "Botones compartir, widgets sociales"
+
+- rule: tech_ia_regulacion
+  country: ES
+  effective_from: 2024-08-01
+  effective_until: null
+  source: "Reglamento (UE) 2024/1689 (AI Act) + AESIA (agencia espanola)"
+  data:
+    norma: "Reglamento de Inteligencia Artificial de la UE"
+    nombre_comun: "AI Act"
+    celex: "32024R1689"
+    contenido: "Regulacion europea de sistemas de IA por niveles de riesgo"
+    clasificacion_riesgo:
+      - nivel: "Riesgo inaceptable (PROHIBIDO)"
+        ejemplos: ["Puntuacion social (social scoring)", "Manipulacion subliminal danina", "Explotacion vulnerabilidades", "Identificacion biometrica remota en tiempo real (excepciones)"]
+        fecha_aplicacion: "2025-02-02"
+      - nivel: "Alto riesgo"
+        ejemplos: ["IA en seleccion personal", "IA en credito bancario", "IA en educacion", "IA en justicia", "IA en infraestructuras criticas"]
+        obligaciones: ["Evaluacion de conformidad", "Gestion de riesgos", "Datos de entrenamiento de calidad", "Transparencia y trazabilidad", "Supervision humana", "Registro en base de datos UE"]
+        fecha_aplicacion: "2027-08-02"
+      - nivel: "Riesgo limitado"
+        ejemplos: ["Chatbots", "Deepfakes", "Sistemas de generacion de contenido"]
+        obligaciones: ["Transparencia: informar al usuario que interactua con IA"]
+        fecha_aplicacion: "2025-08-02"
+      - nivel: "Riesgo minimo"
+        ejemplos: ["Filtros spam", "IA en videojuegos", "Sistemas de recomendacion"]
+        obligaciones: ["Ninguna obligacion especifica"]
+    autoridad_espanola: "AESIA (Agencia Espanola de Supervision de la Inteligencia Artificial)"

@@ -1,0 +1,127 @@
+- rule: energy_permisos_generacion
+  country: ES
+  effective_from: 2013-12-27
+  effective_until: null
+  source: "Ley 24/2013 del Sector Electrico art. 21 + RD 1955/2000 + RD 413/2014 + Ley 21/2013 EIA"
+  data:
+    titulo: "Permisos necesarios para instalaciones de generacion renovable"
+    descripcion: "Tramitacion completa para plantas de generacion electrica con fuentes renovables en Espana"
+    permisos_requeridos:
+      - permiso: acceso_y_conexion
+        descripcion: "Permisos de acceso y conexion a la red electrica (REE para >50MW, distribuidora para <=50MW)"
+        norma: "LSE art. 33 + RD 1183/2020"
+        notas:
+          - "Solicitud ante el gestor de la red (REE o distribuidora segun tension)"
+          - "Hitos vinculantes: autorizacion administrativa en 5 anos, puesta en servicio en 7 anos"
+          - "Garantia economica: 40 EUR/kW solicitado"
+      - permiso: autorizacion_administrativa_previa
+        descripcion: "Autorizacion que reconoce la idoneidad tecnica y legal del proyecto"
+        norma: "LSE art. 53 + RD 1955/2000 arts. 115-121"
+        notas:
+          - "Competencia estatal si >50MW o afecta a mas de una CCAA"
+          - "Competencia autonomica si <=50MW dentro de una CCAA"
+          - "Incluye informacion publica y consulta a organismos afectados"
+      - permiso: autorizacion_construccion
+        descripcion: "Autorizacion para ejecutar las obras del proyecto concreto"
+        norma: "RD 1955/2000 art. 131"
+        notas:
+          - "Requiere proyecto de ejecucion visado"
+          - "Separata tecnica para organismos afectados (carreteras, rios, etc.)"
+      - permiso: declaracion_impacto_ambiental
+        descripcion: "Evaluacion de Impacto Ambiental (DIA) segun potencia y ubicacion"
+        norma: "Ley 21/2013 de Evaluacion Ambiental, Anexos I y II"
+        notas:
+          - "EIA ordinaria obligatoria: proyectos >50MW (Anexo I, grupo 3)"
+          - "EIA simplificada: proyectos entre 10MW y 50MW o en zonas sensibles"
+          - "Organo ambiental estatal (MITECO) o autonomico segun competencia"
+      - permiso: licencia_obras_municipal
+        descripcion: "Licencia urbanistica del ayuntamiento para la ejecucion de obras"
+        norma: "Legislacion urbanistica autonomica + LRBRL art. 84"
+        notas:
+          - "Compatibilidad urbanistica previa recomendable"
+          - "ICIO (Impuesto sobre Construcciones) e IBI aplicables"
+      - permiso: inscripcion_raipre
+        descripcion: "Inscripcion en el Registro Administrativo de Instalaciones de Produccion de Energia Electrica"
+        norma: "RD 413/2014 arts. 4-9"
+        notas:
+          - "Inscripcion previa (antes de puesta en servicio)"
+          - "Inscripcion definitiva (tras acta de puesta en servicio)"
+          - "Obligatoria para percibir retribucion regulada"
+    tramitacion_simplificada:
+      umbral: "<100kW autoconsumo sin excedentes"
+      descripcion: "Instalaciones de autoconsumo sin excedentes <100kW exentas de permisos de acceso y DIA"
+
+- rule: energy_autoconsumo
+  country: ES
+  effective_from: 2019-04-06
+  effective_until: null
+  source: "RD 244/2019 + RDL 15/2018 + LSE art. 9"
+  data:
+    titulo: "Autoconsumo electrico con fuentes renovables"
+    descripcion: "Regulacion del autoconsumo de electricidad en Espana"
+    modalidades:
+      - modalidad: sin_excedentes
+        descripcion: "Instalacion con mecanismo antivertido. Toda la energia se consume in situ"
+        requisitos:
+          - "Mecanismo antivertido certificado"
+          - "No requiere inscripcion en RAIPRE"
+      - modalidad: con_excedentes_acogida_compensacion
+        descripcion: "Excedentes vertidos a la red se compensan en factura (compensacion simplificada)"
+        requisitos:
+          - "Fuente renovable"
+          - "Potencia instalada <=100kW"
+          - "Contrato de compensacion con la comercializadora"
+          - "Una sola instalacion por punto de suministro"
+          - "No sujeto a peaje de generacion"
+        compensacion: "Valoracion de excedentes al precio horario de mercado, descontado de la factura mensual. Nunca resultado negativo"
+      - modalidad: con_excedentes_sin_compensacion
+        descripcion: "Excedentes vendidos a mercado. Sujeto a regimen de productor"
+        requisitos:
+          - "Inscripcion en RAIPRE"
+          - "Obligaciones fiscales de actividad economica (alta IAE, facturacion)"
+    autoconsumo_colectivo:
+      descripcion: "Varios consumidores comparten instalacion en un mismo edificio o zona cercana"
+      norma: "RD 244/2019 art. 3.h + RDL 20/2022 ampliacion distancia"
+      distancia_maxima: "2000 metros (ampliada por RDL 20/2022 desde los 500m iniciales)"
+      coeficientes: "Reparto fijo o dinamico por acuerdo entre los participantes"
+    tramitacion_simplificada:
+      umbral_potencia: "<=100kW"
+      descripcion: "Instalaciones <=100kW: sin permisos de acceso ni estudio de conexion, solo comunicacion a distribuidora"
+      plazo_distribuidora: "10 dias habiles para activar la conexion"
+
+- rule: energy_suelo
+  country: ES
+  effective_from: 2015-10-31
+  effective_until: null
+  source: "RDLeg 7/2015 Texto Refundido Ley de Suelo y Rehabilitacion Urbana + legislacion urbanistica autonomica"
+  data:
+    titulo: "Clasificacion urbanistica del suelo para instalaciones renovables"
+    descripcion: "Requisitos de suelo para la implantacion de plantas de generacion renovable"
+    clasificaciones:
+      - tipo: suelo_urbano
+        aptitud: "Posible para autoconsumo en cubiertas y pequenas instalaciones"
+        notas:
+          - "Limitado a zonas industriales o equipamientos"
+          - "Requiere licencia urbanistica municipal"
+      - tipo: suelo_urbanizable
+        aptitud: "Posible si el planeamiento lo permite"
+        notas:
+          - "Puede requerir modificacion del Plan General de Ordenacion Urbana (PGOU)"
+          - "Sometido a tramitacion urbanistica completa"
+      - tipo: suelo_no_urbanizable_comun
+        aptitud: "Apto para grandes instalaciones renovables"
+        notas:
+          - "Uso permitido como instalacion de utilidad publica o interes social"
+          - "Requiere declaracion de utilidad publica o interes social (DUP)"
+          - "Autorizacion excepcional en suelo rustico segun legislacion autonomica"
+          - "Calificacion urbanistica previa del organo autonomico"
+      - tipo: suelo_no_urbanizable_protegido
+        aptitud: "Muy restringido o prohibido"
+        notas:
+          - "Proteccion ambiental, paisajistica, cultural o agricola"
+          - "Red Natura 2000, ENP, zonas ZEPA, humedales Ramsar: prohibicion general"
+          - "Requiere evaluacion ambiental reforzada si hay excepciones"
+    recomendaciones:
+      - "Solicitar informe de compatibilidad urbanistica antes de promover el proyecto"
+      - "Verificar afecciones sectoriales: vias pecuarias, montes publicos, dominio publico hidraulico, servidumbres aeronauticas"
+      - "Consultar el planeamiento municipal vigente (PGOU/NNSS)"

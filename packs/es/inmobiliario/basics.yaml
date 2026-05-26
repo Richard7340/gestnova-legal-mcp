@@ -1,0 +1,46 @@
+- rule: inmobiliario_arrendamiento_vivienda
+  country: ES
+  effective_from: 2023-05-26
+  effective_until: null
+  source: "LAU (Ley 29/1994, modificada por Ley 12/2023 derecho a vivienda)"
+  data:
+    norma: "Ley de Arrendamientos Urbanos"
+    abreviatura: "LAU"
+    eli: "/eli/es/l/1994/11/24/29/con"
+    contenido: "Regulacion de arrendamientos de vivienda habitual"
+    puntos_clave:
+      - titulo: "Duracion minima"
+        detalle: "5 anos (persona fisica) o 7 anos (persona juridica/gran tenedor). Prorroga tacita 3 anos adicionales"
+      - titulo: "Fianza"
+        detalle: "1 mensualidad de renta (vivienda). Garantias adicionales limitadas a 2 mensualidades en contratos de hasta 5/7 anos"
+      - titulo: "Actualizacion renta"
+        detalle: "Referencia al indice INE (no IPC libre). En zonas tensionadas: limitaciones adicionales (Ley 12/2023)"
+      - titulo: "Zonas tensionadas"
+        detalle: "Ley 12/2023: declaracion por CCAA. Limites a nuevos contratos (renta anterior o indice referencia). Gran tenedor: >10 viviendas"
+      - titulo: "Gastos gestion y formalizacion"
+        detalle: "A cargo del arrendador si es persona juridica (art. 20.1 LAU)"
+      - titulo: "Derecho tanteo y retracto"
+        detalle: "Inquilino tiene derecho preferente en caso de venta (art. 25 LAU)"
+
+- rule: inmobiliario_compraventa
+  country: ES
+  effective_from: 2026-01-01
+  effective_until: null
+  source: "CC arts. 1445+ + ITP (RDLeg 1/1993) + Ley Hipotecaria"
+  data:
+    norma: "Codigo Civil + normativa fiscal"
+    contenido: "Marco legal de compraventa inmobiliaria"
+    puntos_clave:
+      - titulo: "Arras penitenciales"
+        articulo: "CC art. 1454"
+        detalle: "Comprador pierde arras si desiste. Vendedor devuelve el doble si desiste"
+      - titulo: "Impuesto Transmisiones (ITP)"
+        detalle: "Vivienda segunda mano: 6-10% segun CCAA. Vivienda nueva: IVA 10%"
+      - titulo: "Plusvalia municipal"
+        detalle: "Impuesto sobre Incremento Valor Terrenos Urbanos. Lo paga el vendedor"
+      - titulo: "Nota simple registral"
+        detalle: "Verificar titularidad, cargas e hipotecas antes de comprar. Solicitar en Registro de la Propiedad"
+      - titulo: "Escritura publica"
+        detalle: "Otorgamiento ante notario. Inscripcion en Registro de la Propiedad (no obligatoria pero altamente recomendable)"
+      - titulo: "Certificado eficiencia energetica"
+        detalle: "Obligatorio para venta y alquiler (RD 390/2021)"

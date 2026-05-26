@@ -1,0 +1,118 @@
+- rule: env_evaluacion_impacto
+  country: ES
+  effective_from: 2013-12-12
+  effective_until: null
+  source: "Ley 21/2013 de Evaluacion Ambiental + Directiva 2011/92/UE (codificada 2014/52/UE)"
+  data:
+    titulo: "Evaluacion de Impacto Ambiental para proyectos energeticos"
+    descripcion: "Procedimiento de EIA aplicable a instalaciones de generacion de energia renovable en Espana"
+    tipos_evaluacion:
+      - tipo: ordinaria
+        descripcion: "Evaluacion de impacto ambiental ordinaria (Anexo I Ley 21/2013)"
+        proyectos_obligados:
+          - "Instalaciones de generacion de energia electrica >50MW (grupo 3)"
+          - "Parques eolicos con mas de 10 aerogeneradores o >6MW (grupo 3.i)"
+          - "Plantas solares fotovoltaicas que ocupen >100 ha (grupo 3.j ampliado)"
+          - "Instalaciones en espacios protegidos Red Natura 2000 (independientemente de potencia)"
+        fases:
+          - fase: estudio_impacto_ambiental
+            descripcion: "Documento tecnico elaborado por el promotor"
+            contenido:
+              - "Descripcion del proyecto y alternativas"
+              - "Inventario ambiental y valoracion de impactos"
+              - "Medidas preventivas, correctoras y compensatorias"
+              - "Programa de vigilancia ambiental"
+          - fase: informacion_publica
+            descripcion: "Exposicion publica minimo 30 dias habiles"
+          - fase: declaracion_impacto_ambiental
+            descripcion: "Resolucion del organo ambiental (MITECO o autonomico)"
+            plazo_resolucion: "4 meses desde la recepcion del expediente completo"
+            vigencia: "Caduca si no se inicia el proyecto en 4 anos (prorrogable 2 anos)"
+      - tipo: simplificada
+        descripcion: "Evaluacion de impacto ambiental simplificada (Anexo II Ley 21/2013)"
+        proyectos_obligados:
+          - "Instalaciones de generacion de energia electrica entre 10MW y 50MW"
+          - "Parques eolicos no incluidos en Anexo I"
+          - "Plantas fotovoltaicas entre 10 ha y 100 ha"
+          - "Lineas de evacuacion de alta tension >3km no incluidas en Anexo I"
+        fases:
+          - fase: documento_ambiental
+            descripcion: "Documento simplificado del promotor (menos detalle que EsIA)"
+          - fase: consultas_previas
+            descripcion: "Consulta a administraciones afectadas y publico interesado (20 dias)"
+          - fase: informe_impacto_ambiental
+            descripcion: "Resolucion: somete a EIA ordinaria o emite informe con condiciones"
+            plazo_resolucion: "3 meses"
+    organo_competente:
+      estatal: "Direccion General de Calidad y Evaluacion Ambiental (MITECO)"
+      autonomico: "Organo ambiental de cada CCAA"
+      criterio: "Estatal si la autorizacion sustantiva es estatal (>50MW o intercomunitario)"
+    normas_conexas:
+      - "Ley 9/2018 modificacion Ley 21/2013 (simplificacion de plazos)"
+      - "RDL 6/2022 medidas urgentes energia: tramitacion prioritaria renovables"
+      - "RDL 20/2022 agilizacion EIA para instalaciones de autoconsumo"
+
+- rule: env_red_natura
+  country: ES
+  effective_from: 2007-12-14
+  effective_until: null
+  source: "Ley 42/2007 de Patrimonio Natural y Biodiversidad + Directiva 92/43/CEE Habitats + Directiva 2009/147/CE Aves"
+  data:
+    titulo: "Afecciones ambientales en zonas protegidas (Red Natura 2000 y ENP)"
+    descripcion: "Marco legal de proteccion ambiental aplicable a proyectos renovables en zonas protegidas"
+    red_natura_2000:
+      descripcion: "Red ecologica europea de areas de conservacion de la biodiversidad"
+      figuras:
+        - tipo: ZEC
+          nombre: "Zona Especial de Conservacion"
+          norma: "Directiva 92/43/CEE Habitats"
+          descripcion: "Habitats naturales y especies de interes comunitario"
+        - tipo: ZEPA
+          nombre: "Zona de Especial Proteccion para las Aves"
+          norma: "Directiva 2009/147/CE Aves"
+          descripcion: "Areas criticas para la conservacion de aves"
+        - tipo: LIC
+          nombre: "Lugar de Interes Comunitario"
+          norma: "Directiva 92/43/CEE art. 4"
+          descripcion: "Paso previo a la declaracion como ZEC"
+      evaluacion_adecuada:
+        obligatoria: true
+        descripcion: "Cualquier plan o proyecto que pueda afectar a un espacio Red Natura 2000 debe someterse a evaluacion de repercusiones"
+        norma: "Ley 42/2007 art. 46 + Directiva 92/43/CEE art. 6.3"
+        criterio: "Principio de precaucion: en caso de duda, se deniega"
+        excepciones:
+          - "Razones imperiosas de interes publico de primer orden (art. 6.4 Directiva)"
+          - "Requiere dictamen favorable de la Comision Europea si hay habitats/especies prioritarios"
+          - "Obligacion de medidas compensatorias equivalentes"
+    espacios_naturales_protegidos:
+      norma: "Ley 42/2007 arts. 27-50"
+      figuras:
+        - tipo: parque_nacional
+          restriccion: "Prohibicion general de instalaciones energeticas"
+          norma: "Ley 30/2014 de Parques Nacionales art. 7.2"
+        - tipo: parque_natural
+          restriccion: "Sujeto al Plan de Ordenacion de Recursos Naturales (PORN) y Plan Rector de Uso y Gestion (PRUG)"
+        - tipo: reserva_natural
+          restriccion: "Actividades limitadas a las compatibles con la conservacion"
+        - tipo: monumento_natural
+          restriccion: "Regimen de proteccion especial segun declaracion"
+        - tipo: paisaje_protegido
+          restriccion: "Requiere informe de compatibilidad paisajistica"
+    otras_protecciones:
+      - tipo: humedales_ramsar
+        norma: "Convenio de Ramsar 1971 + Ley 42/2007 art. 49"
+        restriccion: "Prohibicion general de alteracion del regimen hidrico"
+      - tipo: vias_pecuarias
+        norma: "Ley 3/1995 de Vias Pecuarias"
+        restriccion: "Dominio publico inalienable. Ocupacion temporal posible con autorizacion"
+      - tipo: dominio_publico_hidraulico
+        norma: "RDLeg 1/2001 Texto Refundido Ley de Aguas"
+        restriccion: "Zona de servidumbre (5m) y policia (100m) desde cauce. Autorizacion de CHE"
+      - tipo: montes_utilidad_publica
+        norma: "Ley 43/2003 de Montes"
+        restriccion: "Autorizacion del organo forestal. Ocupacion temporal con canon"
+    recomendaciones_promotor:
+      - "Consultar el visor MITECO de espacios protegidos antes de elegir ubicacion"
+      - "Solicitar informe previo al organo ambiental sobre afecciones"
+      - "Disenar medidas de integracion paisajistica y corredores ecologicos"
+      - "Incluir plan de vigilancia ambiental con indicadores de seguimiento"

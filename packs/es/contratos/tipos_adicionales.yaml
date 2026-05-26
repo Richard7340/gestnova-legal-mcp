@@ -1,0 +1,71 @@
+- rule: contract_checklist_arrendamiento
+  country: ES
+  effective_from: 2026-01-01
+  effective_until: null
+  source: "LAU (Ley 29/1994) + CC arts. 1542+ + Ley 12/2023"
+  data:
+    tipo_contrato: "arrendamiento"
+    clausulas_obligatorias:
+      - "Identificacion arrendador y arrendatario (DNI/NIE/CIF)"
+      - "Descripcion del inmueble (direccion, referencia catastral, superficie)"
+      - "Duracion del contrato y fecha inicio"
+      - "Renta mensual y forma de pago"
+      - "Fianza legal (1 mes vivienda, 2 meses uso distinto)"
+      - "Destino del inmueble (vivienda habitual, temporal, uso distinto)"
+      - "Estado del inmueble (inventario anexo recomendado)"
+      - "Reparto gastos comunidad, suministros, IBI"
+    clausulas_recomendadas:
+      - "Indice actualizacion renta (INE o pactado, dentro de limites legales)"
+      - "Condiciones para obras y mejoras"
+      - "Subarriendo (prohibido salvo pacto expreso)"
+      - "Causa de resolucion anticipada"
+      - "Clausula de devolucion y estado del inmueble"
+      - "Garantias adicionales (maximo 2 mensualidades, art. 36.5 LAU)"
+
+- rule: contract_checklist_nda
+  country: ES
+  effective_from: 2026-01-01
+  effective_until: null
+  source: "CC arts. 1089+ (obligaciones) + Ley 1/2019 Secretos Empresariales + LOPDGDD 3/2018"
+  data:
+    tipo_contrato: "nda"
+    clausulas_obligatorias:
+      - "Identificacion de las partes"
+      - "Definicion precisa de informacion confidencial"
+      - "Obligaciones de la parte receptora"
+      - "Duracion de la obligacion de confidencialidad"
+      - "Excepciones a la confidencialidad (informacion publica, obligacion legal, desarrollo independiente)"
+      - "Devolucion o destruccion de informacion al termino"
+      - "Ley aplicable y jurisdiccion"
+    clausulas_recomendadas:
+      - "Penalizacion por incumplimiento (clausula penal)"
+      - "Ambito territorial de la obligacion"
+      - "Obligacion de informar empleados y subcontratistas"
+      - "Procedimiento de notificacion de breaches"
+      - "Referencia a Ley 1/2019 Secretos Empresariales"
+      - "Tratamiento de datos personales si aplica (LOPDGDD)"
+
+- rule: contract_checklist_obra
+  country: ES
+  effective_from: 2026-01-01
+  effective_until: null
+  source: "LOE (Ley 38/1999) + CC arts. 1588-1600 + RD 1627/1997 seguridad obras"
+  data:
+    tipo_contrato: "obra"
+    clausulas_obligatorias:
+      - "Identificacion promotor, contratista, director de obra"
+      - "Descripcion detallada de la obra (proyecto, planos, memoria)"
+      - "Precio y forma de pago (precio cerrado, por unidades, administracion)"
+      - "Plazo de ejecucion y penalizaciones por retraso"
+      - "Licencia de obras (responsabilidad del promotor)"
+      - "Seguro de responsabilidad decenal (art. 19 LOE) si es edificacion"
+      - "Plan de seguridad y salud (RD 1627/1997)"
+      - "Recepcion de la obra (acta de recepcion)"
+    clausulas_recomendadas:
+      - "Modificaciones de obra (procedimiento y limites)"
+      - "Subcontratacion (condiciones y limites, Ley 32/2006)"
+      - "Garantias y retencion (5-10% como garantia)"
+      - "Responsabilidad por vicios ocultos (CC art. 1591: 10 anos estructura, 3 anos habitabilidad, 1 ano acabados)"
+      - "Seguro todo riesgo construccion"
+      - "Resolucion por incumplimiento"
+      - "Certificaciones de obra parciales"
