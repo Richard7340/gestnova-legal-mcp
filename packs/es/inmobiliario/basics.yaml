@@ -2,45 +2,172 @@
   country: ES
   effective_from: 2023-05-26
   effective_until: null
-  source: "LAU (Ley 29/1994, modificada por Ley 12/2023 derecho a vivienda)"
+  source: "LAU Ley 29/1994 (reformada por Ley 12/2023 por el derecho a la vivienda) + CC arts. 1542-1582"
   data:
-    norma: "Ley de Arrendamientos Urbanos"
-    abreviatura: "LAU"
-    eli: "/eli/es/l/1994/11/24/29/con"
-    contenido: "Regulacion de arrendamientos de vivienda habitual"
-    puntos_clave:
-      - titulo: "Duracion minima"
-        detalle: "5 anos (persona fisica) o 7 anos (persona juridica/gran tenedor). Prorroga tacita 3 anos adicionales"
-      - titulo: "Fianza"
-        detalle: "1 mensualidad de renta (vivienda). Garantias adicionales limitadas a 2 mensualidades en contratos de hasta 5/7 anos"
-      - titulo: "Actualizacion renta"
-        detalle: "Referencia al indice INE (no IPC libre). En zonas tensionadas: limitaciones adicionales (Ley 12/2023)"
-      - titulo: "Zonas tensionadas"
-        detalle: "Ley 12/2023: declaracion por CCAA. Limites a nuevos contratos (renta anterior o indice referencia). Gran tenedor: >10 viviendas"
-      - titulo: "Gastos gestion y formalizacion"
-        detalle: "A cargo del arrendador si es persona juridica (art. 20.1 LAU)"
-      - titulo: "Derecho tanteo y retracto"
-        detalle: "Inquilino tiene derecho preferente en caso de venta (art. 25 LAU)"
+    titulo: "Arrendamiento de vivienda habitual"
+    descripcion: "Regimen juridico del alquiler de vivienda habitual en Espana tras la Ley 12/2023"
+    duracion:
+      minima_persona_fisica: "5 anos"
+      minima_persona_juridica: "7 anos"
+      prorroga_tacita: "3 anos adicionales si ninguna parte notifica con 4 meses (arrendador) o 2 meses (arrendatario) de antelacion"
+      norma: "LAU arts. 9-10 (reformados Ley 12/2023)"
+    fianza:
+      obligatoria: "1 mensualidad de renta"
+      deposito: "En organismo autonomico (ej. IVIMA Madrid, INCASOL Cataluna, Bizilagun Euskadi)"
+      garantias_adicionales: "Maximo 2 mensualidades adicionales en contratos de hasta 5/7 anos"
+      norma: "LAU art. 36"
+    renta:
+      libre_pacto_inicial: true
+      excepciones:
+        - condicion: zona_tensionada
+          descripcion: "En zonas de mercado residencial tensionado, la renta del nuevo contrato no puede exceder la del contrato anterior (indexada)"
+          norma: "Ley 12/2023 art. 17"
+        - condicion: gran_tenedor_zona_tensionada
+          descripcion: "Grandes tenedores (>=10 viviendas, o 5 en zona tensionada segun CCAA): la renta se limita al indice de referencia"
+          norma: "Ley 12/2023 art. 17.7"
+      actualizacion_anual:
+        descripcion: "Limitada por ley. No se permite IPC libremente"
+        limites:
+          - periodo: "2024"
+            limite: "3% (RDL 6/2022 prorrogado)"
+          - periodo: "2025 en adelante"
+            limite: "Nuevo indice IRAV (Indice de Referencia de Arrendamiento de Vivienda) pendiente de publicacion por INE"
+        norma: "LAU art. 18 + disposiciones transitorias Ley 12/2023"
+    zona_tensionada:
+      declaracion: "Por las CCAA, con validez de 3 anos prorrogable"
+      requisitos:
+        - "Carga media de la hipoteca/alquiler >30% de los ingresos medios del hogar"
+        - "Precio alquiler ha crecido al menos 3 puntos por encima del IPC en los 5 anos anteriores"
+      efectos:
+        - "Limitacion de renta en nuevos contratos"
+        - "Prorroga extraordinaria de 1 ano para el arrendatario"
+        - "Bonificaciones fiscales para arrendadores que bajen renta"
+      norma: "Ley 12/2023 arts. 18-19"
+    desahucio:
+      vulnerabilidad: "Suspension del desahucio si hay vulnerabilidad acreditada (servicios sociales)"
+      gran_tenedor: "Procedimiento de conciliacion previo obligatorio si el arrendador es gran tenedor"
+      norma: "Ley 12/2023 disposicion final quinta (reforma LEC)"
+    gastos:
+      gestion_inmobiliaria: "A cargo del arrendador si es persona juridica"
+      ibi: "Repercutible al arrendatario solo si se pacta expresamente"
+      comunidad: "Repercutible si se pacta expresamente"
+      norma: "LAU art. 20"
+    fiscalidad_arrendador:
+      rendimiento_neto: "Ingresos - gastos deducibles (IBI, comunidad, seguro, amortizacion 3%, intereses hipoteca, reparaciones)"
+      reducciones_irpf:
+        - reduccion: "90%"
+          condicion: "Zona tensionada con reduccion de renta >=5% respecto al contrato anterior"
+        - reduccion: "70%"
+          condicion: "Primera vivienda arrendada en zona tensionada a jovenes (18-35)"
+        - reduccion: "60%"
+          condicion: "Vivienda rehabilitada en los 2 anos anteriores"
+        - reduccion: "50%"
+          condicion: "Resto de arrendamientos de vivienda habitual (antes era 60%)"
+      norma: "Ley 12/2023 disposicion final segunda (reforma LIRPF art. 23.2)"
 
 - rule: inmobiliario_compraventa
   country: ES
-  effective_from: 2026-01-01
+  effective_from: 2015-10-31
   effective_until: null
-  source: "CC arts. 1445+ + ITP (RDLeg 1/1993) + Ley Hipotecaria"
+  source: "CC arts. 1445-1541 + RDLeg 1/1993 ITP-AJD + Ley Hipotecaria + RDLeg 2/2004 TRLRHL (plusvalia)"
   data:
-    norma: "Codigo Civil + normativa fiscal"
-    contenido: "Marco legal de compraventa inmobiliaria"
-    puntos_clave:
-      - titulo: "Arras penitenciales"
-        articulo: "CC art. 1454"
-        detalle: "Comprador pierde arras si desiste. Vendedor devuelve el doble si desiste"
-      - titulo: "Impuesto Transmisiones (ITP)"
-        detalle: "Vivienda segunda mano: 6-10% segun CCAA. Vivienda nueva: IVA 10%"
-      - titulo: "Plusvalia municipal"
-        detalle: "Impuesto sobre Incremento Valor Terrenos Urbanos. Lo paga el vendedor"
-      - titulo: "Nota simple registral"
-        detalle: "Verificar titularidad, cargas e hipotecas antes de comprar. Solicitar en Registro de la Propiedad"
-      - titulo: "Escritura publica"
-        detalle: "Otorgamiento ante notario. Inscripcion en Registro de la Propiedad (no obligatoria pero altamente recomendable)"
-      - titulo: "Certificado eficiencia energetica"
-        detalle: "Obligatorio para venta y alquiler (RD 390/2021)"
+    titulo: "Compraventa de inmuebles"
+    descripcion: "Regulacion y tramites de la compraventa de bienes inmuebles en Espana"
+    fases:
+      - fase: negociacion_precontractual
+        pasos:
+          - paso: nota_simple_registro
+            descripcion: "Solicitar nota simple informativa al Registro de la Propiedad: titular, cargas, superficie"
+            obligatorio: true
+            norma: "LH art. 222"
+          - paso: comprobacion_catastral
+            descripcion: "Verificar referencia catastral, superficie y linderos en el Catastro"
+          - paso: certificado_comunidad
+            descripcion: "Certificado de estar al corriente de pago de cuotas de comunidad de propietarios"
+            norma: "LPH art. 9.1.e"
+          - paso: certificado_energetico
+            descripcion: "Certificado de eficiencia energetica vigente (obligatorio para venta y alquiler)"
+            norma: "RD 390/2021"
+      - fase: arras
+        descripcion: "Contrato de arras como senal de la compraventa"
+        tipos:
+          - tipo: penitenciales
+            descripcion: "Permiten desistir perdiendo la senal (comprador) o devolviendo el doble (vendedor)"
+            norma: "CC art. 1454"
+            importe_habitual: "5-10% del precio de venta"
+          - tipo: confirmatorias
+            descripcion: "Senal a cuenta del precio. No permiten desistir; incumplimiento = responsabilidad contractual"
+          - tipo: penales
+            descripcion: "Penalizacion por incumplimiento sin posibilidad de desistimiento libre"
+      - fase: escritura_publica
+        descripcion: "Otorgamiento ante notario"
+        contenido_obligatorio:
+          - "Identidad de las partes (DNI/NIE/CIF)"
+          - "Descripcion del inmueble (registro, catastro)"
+          - "Titulo del vendedor y cargas existentes"
+          - "Precio y forma de pago (medio de pago identificado: transferencia, cheque bancario)"
+          - "Certificado de estar al corriente de IBI"
+          - "Licencia de primera ocupacion (obra nueva) o cedula de habitabilidad"
+        norma: "CC arts. 1462, 1280 + RN arts. 170-174"
+      - fase: inscripcion_registro
+        descripcion: "Inscripcion en el Registro de la Propiedad (voluntaria pero muy recomendable)"
+        efectos: "Oponibilidad frente a terceros. Proteccion del tercero hipotecario (art. 34 LH)"
+        norma: "LH arts. 2-3, 34, 38"
+    impuestos:
+      - impuesto: ITP
+        nombre: "Impuesto de Transmisiones Patrimoniales"
+        aplica: "Vivienda de segunda mano (entre particulares)"
+        tipo_general: "6-10% segun CCAA"
+        ejemplos:
+          - ccaa: "Comunidad de Madrid"
+            tipo: "6%"
+          - ccaa: "Cataluna"
+            tipo: "10%"
+          - ccaa: "Andalucia"
+            tipo: "7%"
+          - ccaa: "Comunidad Valenciana"
+            tipo: "10%"
+        norma: "RDLeg 1/1993 art. 10 + legislacion autonomica"
+        plazo_liquidacion: "30 dias habiles desde la escritura"
+      - impuesto: IVA
+        nombre: "Impuesto sobre el Valor Anadido"
+        aplica: "Vivienda nueva (primera entrega por promotor)"
+        tipo: "10% (vivienda) o 21% (locales, garajes no anejos)"
+        complemento: "AJD (Actos Juridicos Documentados) 0,5-1,5% segun CCAA"
+        norma: "Ley 37/1992 arts. 20.Uno.22 y 91.Uno.1.7"
+      - impuesto: plusvalia_municipal
+        nombre: "Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana"
+        sujeto_pasivo: "Vendedor"
+        calculo: "Sistema objetivo (valor catastral x coeficientes) o sistema real (diferencia valores compra-venta). Se aplica el menor"
+        norma: "RDLeg 2/2004 arts. 104-110 (reformado RDL 26/2021 tras STC 182/2021)"
+        exencion: "No hay plusvalia si se transmite con perdida (comprobacion real obligatoria)"
+        plazo_liquidacion: "30 dias habiles desde la escritura"
+      - impuesto: irpf_ganancia_patrimonial
+        nombre: "Ganancia patrimonial en IRPF del vendedor"
+        descripcion: "Diferencia entre valor de adquisicion y valor de transmision"
+        tipos:
+          - tramo: "Hasta 6.000 EUR"
+            tipo: "19%"
+          - tramo: "6.000 - 50.000 EUR"
+            tipo: "21%"
+          - tramo: "50.000 - 200.000 EUR"
+            tipo: "23%"
+          - tramo: "200.000 - 300.000 EUR"
+            tipo: "27%"
+          - tramo: "Mas de 300.000 EUR"
+            tipo: "28%"
+        exencion_vivienda_habitual: "Exenta si se reinvierte en otra vivienda habitual en 2 anos"
+        exencion_mayores_65: "Exenta para mayores de 65 anos que transmitan su vivienda habitual"
+        norma: "LIRPF arts. 33-39"
+    gastos_comprador:
+      - "Notaria (arancel regulado, ~0,1-0,5% del precio)"
+      - "Registro de la Propiedad (arancel regulado, ~0,1-0,3%)"
+      - "Gestoria (opcional, ~300-600 EUR)"
+      - "ITP o IVA+AJD segun tipo de vivienda"
+      - "Tasacion hipotecaria si hay financiacion (~250-500 EUR)"
+    gastos_vendedor:
+      - "Plusvalia municipal"
+      - "Ganancia patrimonial IRPF"
+      - "Cancelacion registral de hipoteca si la hay (~300-1000 EUR)"
+      - "Certificado energetico si no lo tiene (~100-250 EUR)"
+      - "Comision agencia inmobiliaria (si contrato, ~3-5%)"

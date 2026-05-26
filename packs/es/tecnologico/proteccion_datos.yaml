@@ -1,95 +1,231 @@
 - rule: tech_rgpd_obligaciones
   country: ES
-  effective_from: 2018-12-07
+  effective_from: 2018-12-06
   effective_until: null
-  source: "LOPDGDD (LO 3/2018) + RGPD (Reg UE 2016/679)"
+  source: "LOPDGDD 3/2018 + RGPD (UE) 2016/679"
   data:
-    norma: "Ley Organica 3/2018 de Proteccion de Datos y Garantia de los Derechos Digitales"
-    abreviatura: "LOPDGDD"
-    eli: "/eli/es/lo/2018/12/05/3/con"
-    obligaciones_principales:
-      - titulo: "Base juridica del tratamiento"
-        articulo: "RGPD art. 6"
-        detalle: "Todo tratamiento necesita base juridica: consentimiento, contrato, obligacion legal, interes vital, interes publico, interes legitimo"
-      - titulo: "Consentimiento"
-        articulo: "RGPD art. 7 + LOPDGDD art. 6"
-        detalle: "Libre, especifico, informado e inequivoco. Debe poder retirarse. Menores: 14 anos en Espana"
-      - titulo: "Derechos ARSULOP"
-        articulo: "RGPD arts. 15-22 + LOPDGDD arts. 12-18"
-        detalle: "Acceso, Rectificacion, Supresion, Limitacion, Portabilidad, Oposicion. Plazo respuesta: 1 mes"
-      - titulo: "DPD (Delegado Proteccion Datos)"
-        articulo: "RGPD art. 37 + LOPDGDD art. 34"
-        detalle: "Obligatorio: administraciones publicas, tratamiento masivo, datos especiales. Recomendado >250 empleados"
-      - titulo: "Registro Actividades Tratamiento (RAT)"
-        articulo: "RGPD art. 30"
-        detalle: "Obligatorio si >250 empleados o tratamiento no ocasional. En la practica, recomendado siempre"
-      - titulo: "Brechas de seguridad"
-        articulo: "RGPD arts. 33-34"
-        detalle: "Notificar a AEPD en 72 horas. Si alto riesgo para interesados, notificarles tambien"
+    titulo: "Obligaciones de proteccion de datos personales en Espana"
+    descripcion: "Marco normativo completo RGPD + LOPDGDD para empresas y autonomos"
+    bases_juridicas:
+      norma: "RGPD art. 6 + LOPDGDD arts. 6-10"
+      tipos:
+        - base: consentimiento
+          descripcion: "Libre, especifico, informado e inequivoco. Carga de la prueba en el responsable"
+          notas: "Para menores de 14 anos se requiere consentimiento del titular de la patria potestad (LOPDGDD art. 7)"
+        - base: ejecucion_contrato
+          descripcion: "Necesario para la ejecucion de un contrato o medidas precontractuales"
+        - base: obligacion_legal
+          descripcion: "Cumplimiento de una obligacion legal del responsable"
+        - base: interes_vital
+          descripcion: "Proteccion de intereses vitales del interesado o de otra persona"
+        - base: interes_publico
+          descripcion: "Mision realizada en interes publico o ejercicio de poderes publicos"
+        - base: interes_legitimo
+          descripcion: "Interes legitimo del responsable o de un tercero, con ponderacion previa"
+    derechos_interesado:
+      norma: "RGPD arts. 15-22 + LOPDGDD arts. 12-18"
+      derechos:
+        - derecho: acceso
+          descripcion: "Obtener confirmacion y copia de los datos tratados"
+          plazo_respuesta: "1 mes (prorrogable 2 meses por complejidad)"
+        - derecho: rectificacion
+          descripcion: "Corregir datos inexactos o completar datos incompletos"
+          plazo_respuesta: "1 mes"
+        - derecho: supresion
+          descripcion: "Derecho al olvido. Eliminacion de datos cuando ya no son necesarios"
+          plazo_respuesta: "1 mes"
+        - derecho: limitacion
+          descripcion: "Restriccion del tratamiento en determinadas circunstancias"
+          plazo_respuesta: "1 mes"
+        - derecho: portabilidad
+          descripcion: "Recibir datos en formato estructurado, de uso comun y lectura mecanica"
+          plazo_respuesta: "1 mes"
+        - derecho: oposicion
+          descripcion: "Oponerse al tratamiento basado en interes legitimo o publico, incluido profiling"
+          plazo_respuesta: "1 mes"
+    delegado_proteccion_datos:
+      norma: "RGPD art. 37 + LOPDGDD art. 34"
+      obligatorio_para:
+        - "Autoridades u organismos publicos"
+        - "Tratamiento a gran escala de categorias especiales de datos"
+        - "Observacion habitual y sistematica de interesados a gran escala"
+        - "Colegios profesionales y sus consejos generales (LOPDGDD art. 34.1.c)"
+        - "Centros docentes, universidades"
+        - "Entidades aseguradoras y reaseguradoras"
+        - "Empresas de seguridad privada"
+        - "Entidades que exploten redes y presten servicios de comunicaciones electronicas"
+      funciones:
+        - "Informar y asesorar al responsable y encargado del tratamiento"
+        - "Supervisar el cumplimiento del RGPD"
+        - "Punto de contacto con la AEPD"
+      nota: "Recomendable para empresas con mas de 250 empleados o tratamiento masivo de datos"
+    registro_actividades_tratamiento:
+      norma: "RGPD art. 30"
+      obligatorio: "Empresas con mas de 250 empleados o tratamiento no ocasional o de categorias especiales"
+      contenido:
+        - "Nombre y datos de contacto del responsable"
+        - "Fines del tratamiento"
+        - "Categorias de interesados y de datos personales"
+        - "Categorias de destinatarios (incluidos terceros paises)"
+        - "Plazos previstos de supresion"
+        - "Medidas tecnicas y organizativas de seguridad"
+    brechas_seguridad:
+      norma: "RGPD arts. 33-34"
+      plazo_notificacion_aepd: "72 horas desde que se tenga conocimiento"
+      notificacion_afectados: "Sin dilacion indebida si riesgo alto para derechos y libertades"
+      contenido_notificacion:
+        - "Naturaleza de la violacion"
+        - "Datos de contacto del DPD o punto de contacto"
+        - "Consecuencias probables"
+        - "Medidas adoptadas o propuestas"
     sanciones:
-      - nivel: "Infracciones leves"
-        importe: "Hasta 40.000 EUR (LOPDGDD art. 76)"
-      - nivel: "Infracciones graves"
-        importe: "Hasta 300.000 EUR (LOPDGDD art. 77)"
-      - nivel: "Infracciones muy graves"
-        importe: "Hasta 20M EUR o 4% facturacion global (RGPD art. 83)"
+      norma: "RGPD arts. 83-84 + LOPDGDD arts. 70-78"
+      niveles:
+        - nivel: leve
+          importe_maximo: "Hasta 40.000 EUR"
+          prescripcion: "1 ano"
+        - nivel: grave
+          importe_maximo: "Hasta 300.000 EUR"
+          prescripcion: "2 anos"
+        - nivel: muy_grave
+          importe_maximo: "Hasta 20.000.000 EUR o 4% volumen negocio anual global"
+          prescripcion: "3 anos"
 
 - rule: tech_cookies
   country: ES
-  effective_from: 2002-07-12
+  effective_from: 2023-07-12
   effective_until: null
-  source: "LSSI (Ley 34/2002) art. 22.2 + Guia AEPD sobre cookies 2023"
+  source: "LSSI 34/2002 art. 22.2 + Guia AEPD sobre uso de cookies (actualizada julio 2023) + Directiva ePrivacy 2002/58/CE"
   data:
-    norma: "Ley de Servicios de la Sociedad de la Informacion"
-    abreviatura: "LSSI"
-    eli: "/eli/es/l/2002/07/11/34/con"
-    articulo: "22.2"
-    contenido: "Uso de cookies requiere consentimiento informado del usuario"
+    titulo: "Regulacion de cookies y tecnologias de rastreo"
+    descripcion: "Obligaciones sobre cookies y tecnologias similares en sitios web y aplicaciones"
     obligaciones:
-      - "Informar de forma clara sobre las cookies utilizadas y su finalidad"
-      - "Obtener consentimiento ANTES de instalar cookies no esenciales"
-      - "Panel de configuracion con opcion de rechazar por categorias"
-      - "Cookies tecnicas/esenciales: NO necesitan consentimiento"
-      - "Cookies analiticas, publicitarias, de redes sociales: SI necesitan consentimiento"
-      - "Registro del consentimiento obtenido"
-      - "Renovar consentimiento cada 24 meses maximo"
+      - obligacion: informacion_previa
+        descripcion: "Informar claramente sobre las cookies utilizadas antes de su instalacion"
+        contenido_informacion:
+          - "Identificacion del editor del sitio web"
+          - "Cookies utilizadas: propias y de terceros"
+          - "Finalidad de cada cookie"
+          - "Duracion de cada cookie"
+          - "Si se realizan transferencias internacionales"
+      - obligacion: consentimiento
+        descripcion: "Obtener consentimiento previo, libre, especifico, informado e inequivoco"
+        requisitos:
+          - "Accion afirmativa clara (no valen casillas premarcadas)"
+          - "Posibilidad real de rechazar sin menoscabo del servicio basico"
+          - "Granularidad: el usuario puede aceptar por categorias"
+          - "El silencio, scroll o navegacion continuada NO constituyen consentimiento"
+          - "Debe ser tan facil retirar el consentimiento como darlo"
+      - obligacion: panel_configuracion
+        descripcion: "Panel accesible en todo momento para gestionar preferencias de cookies"
+        requisitos:
+          - "Enlace visible en todas las paginas (pie de pagina recomendado)"
+          - "Permite modificar o revocar consentimiento por categorias"
+          - "Actualiza las cookies activas en tiempo real"
     tipos_cookies:
-      - tipo: "Tecnicas/esenciales"
-        consentimiento: false
-        ejemplo: "Sesion, carrito de compra, seguridad"
-      - tipo: "Analiticas"
-        consentimiento: true
-        ejemplo: "Google Analytics, estadisticas de uso"
-      - tipo: "Publicitarias"
-        consentimiento: true
-        ejemplo: "Tracking publicitario, retargeting"
-      - tipo: "Redes sociales"
-        consentimiento: true
-        ejemplo: "Botones compartir, widgets sociales"
+      - tipo: tecnicas
+        consentimiento_requerido: false
+        descripcion: "Estrictamente necesarias para el funcionamiento del sitio (sesion, carrito, seguridad)"
+      - tipo: preferencias
+        consentimiento_requerido: true
+        descripcion: "Recuerdan elecciones del usuario (idioma, region)"
+      - tipo: analiticas
+        consentimiento_requerido: true
+        descripcion: "Miden el trafico y uso del sitio"
+        nota: "Excepcion AEPD: analiticas propias con IP anonimizada y sin cruces con terceros pueden eximirse de consentimiento"
+      - tipo: publicitarias
+        consentimiento_requerido: true
+        descripcion: "Rastreo y perfiles para publicidad personalizada"
+    sanciones:
+      norma: "LSSI art. 38-39"
+      leve: "Hasta 30.000 EUR"
+      grave: "30.001 - 150.000 EUR"
+      muy_grave: "150.001 - 600.000 EUR"
 
-- rule: tech_ia_regulacion
+- rule: tech_ia_act
   country: ES
   effective_from: 2024-08-01
   effective_until: null
-  source: "Reglamento (UE) 2024/1689 (AI Act) + AESIA (agencia espanola)"
+  source: "Reglamento (UE) 2024/1689 del Parlamento Europeo y del Consejo (AI Act) + COM(2021) 206 final"
   data:
-    norma: "Reglamento de Inteligencia Artificial de la UE"
-    nombre_comun: "AI Act"
-    celex: "32024R1689"
-    contenido: "Regulacion europea de sistemas de IA por niveles de riesgo"
-    clasificacion_riesgo:
-      - nivel: "Riesgo inaceptable (PROHIBIDO)"
-        ejemplos: ["Puntuacion social (social scoring)", "Manipulacion subliminal danina", "Explotacion vulnerabilidades", "Identificacion biometrica remota en tiempo real (excepciones)"]
-        fecha_aplicacion: "2025-02-02"
-      - nivel: "Alto riesgo"
-        ejemplos: ["IA en seleccion personal", "IA en credito bancario", "IA en educacion", "IA en justicia", "IA en infraestructuras criticas"]
-        obligaciones: ["Evaluacion de conformidad", "Gestion de riesgos", "Datos de entrenamiento de calidad", "Transparencia y trazabilidad", "Supervision humana", "Registro en base de datos UE"]
-        fecha_aplicacion: "2027-08-02"
-      - nivel: "Riesgo limitado"
-        ejemplos: ["Chatbots", "Deepfakes", "Sistemas de generacion de contenido"]
-        obligaciones: ["Transparencia: informar al usuario que interactua con IA"]
-        fecha_aplicacion: "2025-08-02"
-      - nivel: "Riesgo minimo"
-        ejemplos: ["Filtros spam", "IA en videojuegos", "Sistemas de recomendacion"]
-        obligaciones: ["Ninguna obligacion especifica"]
-    autoridad_espanola: "AESIA (Agencia Espanola de Supervision de la Inteligencia Artificial)"
+    titulo: "Reglamento Europeo de Inteligencia Artificial (AI Act)"
+    descripcion: "Clasificacion por niveles de riesgo y obligaciones aplicables a sistemas de IA en la UE"
+    entrada_en_vigor: "1 agosto 2024"
+    aplicacion_plena: "2 agosto 2026"
+    aplicacion_progresiva:
+      - fecha: "2025-02-02"
+        alcance: "Prohibicion de practicas de IA de riesgo inaceptable"
+      - fecha: "2025-08-02"
+        alcance: "Obligaciones para modelos de proposito general (GPAI)"
+      - fecha: "2026-08-02"
+        alcance: "Obligaciones completas para sistemas de alto riesgo"
+    niveles_riesgo:
+      - nivel: inaceptable
+        descripcion: "Sistemas prohibidos"
+        ejemplos:
+          - "Puntuacion social (social scoring) por autoridades publicas"
+          - "Reconocimiento biometrico en tiempo real en espacios publicos (salvo excepciones de seguridad)"
+          - "Manipulacion subliminal que cause danos"
+          - "Explotacion de vulnerabilidades por edad, discapacidad o situacion social"
+          - "Categorizacion biometrica por raza, orientacion sexual, creencias"
+        obligacion: "Prohibicion total de comercializacion y uso"
+      - nivel: alto
+        descripcion: "Sistemas sujetos a requisitos estrictos antes de su comercializacion"
+        ejemplos:
+          - "Infraestructuras criticas (energia, transporte, agua)"
+          - "Educacion y formacion profesional (acceso, evaluacion)"
+          - "Empleo y gestion de trabajadores (seleccion, evaluacion de rendimiento)"
+          - "Servicios publicos esenciales (prestaciones sociales, credito)"
+          - "Aplicacion de la ley y justicia"
+          - "Migracion, asilo y control de fronteras"
+        obligaciones:
+          - "Sistema de gestion de riesgos documentado"
+          - "Datos de entrenamiento de calidad (representativos, sin sesgos)"
+          - "Documentacion tecnica completa"
+          - "Registro de actividades (logging) automatico"
+          - "Transparencia e informacion al usuario"
+          - "Supervision humana efectiva"
+          - "Robustez, precision y ciberseguridad"
+          - "Evaluacion de conformidad antes de la puesta en mercado"
+          - "Marcado CE y declaracion de conformidad"
+      - nivel: limitado
+        descripcion: "Sistemas con obligaciones de transparencia"
+        ejemplos:
+          - "Chatbots y asistentes virtuales"
+          - "Deepfakes (contenido generado o manipulado)"
+          - "Sistemas de reconocimiento de emociones"
+        obligaciones:
+          - "Informar al usuario de que interactua con IA"
+          - "Etiquetar contenido generado por IA (deepfakes, texto sintetico)"
+      - nivel: minimo
+        descripcion: "Sistemas sin obligaciones especificas"
+        ejemplos:
+          - "Filtros de spam"
+          - "Videojuegos con IA"
+          - "Sistemas de recomendacion genericos"
+        obligaciones:
+          - "Buenas practicas voluntarias y codigos de conducta"
+    modelos_proposito_general:
+      descripcion: "Obligaciones especificas para GPAI (como LLMs)"
+      norma: "AI Act arts. 52-55"
+      obligaciones_basicas:
+        - "Documentacion tecnica del modelo"
+        - "Informacion para proveedores downstream"
+        - "Cumplimiento de la Directiva de derechos de autor"
+        - "Resumen del contenido de entrenamiento"
+      riesgo_sistemico:
+        umbral: "Capacidad de computo >10^25 FLOPS en entrenamiento"
+        obligaciones_adicionales:
+          - "Evaluaciones de modelo adversariales"
+          - "Evaluacion y mitigacion de riesgos sistemicos"
+          - "Reporte de incidentes graves"
+          - "Ciberseguridad adecuada"
+    gobernanza:
+      oficina_ia: "Oficina Europea de IA (AI Office) en la Comision Europea"
+      autoridad_nacional: "Cada Estado miembro designa al menos una autoridad de supervision"
+      sandbox_regulatorio: "Obligatorio que cada Estado miembro establezca al menos un sandbox de IA"
+    sanciones:
+      riesgo_inaceptable: "Hasta 35.000.000 EUR o 7% facturacion global anual"
+      alto_riesgo: "Hasta 15.000.000 EUR o 3% facturacion global anual"
+      informacion_incorrecta: "Hasta 7.500.000 EUR o 1% facturacion global anual"
+      pymes: "Se aplica el menor de los dos importes (fijo o porcentaje)"

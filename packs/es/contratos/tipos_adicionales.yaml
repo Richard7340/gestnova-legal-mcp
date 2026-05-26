@@ -1,71 +1,160 @@
 - rule: contract_checklist_arrendamiento
   country: ES
-  effective_from: 2026-01-01
+  effective_from: 2023-05-26
   effective_until: null
-  source: "LAU (Ley 29/1994) + CC arts. 1542+ + Ley 12/2023"
+  source: "CC arts. 1542-1582 + LAU Ley 29/1994 (reformada por Ley 12/2023 de vivienda)"
   data:
-    tipo_contrato: "arrendamiento"
+    titulo: "Checklist contrato de arrendamiento"
+    tipo_contrato: arrendamiento
+    subtipos:
+      - subtipo: vivienda
+        norma: "LAU Titulo II (arts. 6-28)"
+      - subtipo: uso_distinto_vivienda
+        norma: "LAU Titulo III (arts. 29-35)"
     clausulas_obligatorias:
-      - "Identificacion arrendador y arrendatario (DNI/NIE/CIF)"
-      - "Descripcion del inmueble (direccion, referencia catastral, superficie)"
-      - "Duracion del contrato y fecha inicio"
-      - "Renta mensual y forma de pago"
-      - "Fianza legal (1 mes vivienda, 2 meses uso distinto)"
-      - "Destino del inmueble (vivienda habitual, temporal, uso distinto)"
-      - "Estado del inmueble (inventario anexo recomendado)"
-      - "Reparto gastos comunidad, suministros, IBI"
+      - clausula: identificacion_partes
+        descripcion: "Arrendador y arrendatario: nombre/razon social, NIF/CIF, domicilio"
+      - clausula: identificacion_inmueble
+        descripcion: "Direccion completa, referencia catastral, superficie util, anexos (garaje, trastero)"
+      - clausula: duracion
+        descripcion: "Plazo inicial pactado. Duracion minima legal: 5 anos (7 si arrendador es persona juridica o gran tenedor)"
+        norma: "LAU art. 9 (reformado Ley 12/2023)"
+      - clausula: renta
+        descripcion: "Importe mensual en euros. Libre pacto inicial (salvo zona tensionada)"
+      - clausula: actualizacion_renta
+        descripcion: "Mecanismo de revision anual. Limite legal: indice de referencia de competitividad (no IPC libre)"
+        norma: "LAU art. 18 (reformado Ley 12/2023) + disposicion final RDL 6/2022"
+        notas:
+          - "2024: limite del 3%"
+          - "2025 en adelante: nuevo indice de referencia IRAV pendiente de publicacion"
+      - clausula: fianza_legal
+        descripcion: "Obligatoria por ley: 1 mensualidad vivienda, 2 mensualidades uso distinto"
+        norma: "LAU art. 36.1"
+        nota: "Deposito obligatorio en organismo autonomico (IVIMA, INCASOL, etc.)"
+      - clausula: garantias_adicionales
+        descripcion: "Aval bancario, deposito adicional: maximo 2 mensualidades (vivienda, 5 anos)"
+        norma: "LAU art. 36.5"
+      - clausula: estado_inmueble
+        descripcion: "Inventario del estado y mobiliario al inicio del contrato"
+      - clausula: gastos_comunidad
+        descripcion: "Reparto de gastos: IBI, comunidad, suministros. Pacto expreso necesario"
     clausulas_recomendadas:
-      - "Indice actualizacion renta (INE o pactado, dentro de limites legales)"
-      - "Condiciones para obras y mejoras"
-      - "Subarriendo (prohibido salvo pacto expreso)"
-      - "Causa de resolucion anticipada"
-      - "Clausula de devolucion y estado del inmueble"
-      - "Garantias adicionales (maximo 2 mensualidades, art. 36.5 LAU)"
+      - clausula: obras_y_mejoras
+        descripcion: "Regimen de obras: conservacion (arrendador), mejoras (arrendador con limite 20% renta), obras arrendatario (consentimiento)"
+        norma: "LAU arts. 21-24"
+      - clausula: cesion_subarriendo
+        descripcion: "Prohibicion o condiciones. Sin consentimiento escrito del arrendador es causa de resolucion"
+        norma: "LAU art. 8 (vivienda) y art. 32 (local)"
+      - clausula: derecho_tanteo_retracto
+        descripcion: "Derecho del arrendatario en caso de venta del inmueble"
+        norma: "LAU art. 25"
+      - clausula: certificado_energetico
+        descripcion: "Obligatorio entregar o poner a disposicion del arrendatario"
+        norma: "RD 390/2021"
 
 - rule: contract_checklist_nda
   country: ES
-  effective_from: 2026-01-01
+  effective_from: 2019-03-14
   effective_until: null
-  source: "CC arts. 1089+ (obligaciones) + Ley 1/2019 Secretos Empresariales + LOPDGDD 3/2018"
+  source: "CC arts. 1254-1258 (obligaciones y contratos) + Ley 1/2019 Secretos Empresariales + LOPDGDD 3/2018"
   data:
-    tipo_contrato: "nda"
+    titulo: "Checklist acuerdo de confidencialidad (NDA)"
+    tipo_contrato: confidencialidad
     clausulas_obligatorias:
-      - "Identificacion de las partes"
-      - "Definicion precisa de informacion confidencial"
-      - "Obligaciones de la parte receptora"
-      - "Duracion de la obligacion de confidencialidad"
-      - "Excepciones a la confidencialidad (informacion publica, obligacion legal, desarrollo independiente)"
-      - "Devolucion o destruccion de informacion al termino"
-      - "Ley aplicable y jurisdiccion"
+      - clausula: identificacion_partes
+        descripcion: "Parte reveladora y parte receptora (o mutuo). Datos completos y representante legal"
+      - clausula: definicion_informacion_confidencial
+        descripcion: "Definicion amplia pero precisa: incluye datos tecnicos, financieros, comerciales, know-how, datos personales"
+        notas:
+          - "Marcar documentos como CONFIDENCIAL cuando sea posible"
+          - "Incluir informacion oral confirmada por escrito en plazo (ej. 10 dias)"
+      - clausula: obligaciones_receptor
+        descripcion: "No divulgar, no usar para fines distintos, proteger con el mismo grado que la propia"
+      - clausula: ambito_divulgacion_permitida
+        descripcion: "Personas autorizadas (empleados, asesores, subcontratistas) bajo obligacion equivalente de secreto"
+      - clausula: duracion_obligacion
+        descripcion: "Periodo de vigencia del deber de confidencialidad tras terminacion del contrato"
+        recomendacion: "2-5 anos segun sector. Secretos empresariales: indefinido mientras conserven valor (Ley 1/2019 art. 1)"
+      - clausula: excepciones
+        descripcion: "Informacion excluida de la obligacion de confidencialidad"
+        excepciones_tipo:
+          - "Ya conocida por el receptor antes de la revelacion"
+          - "De dominio publico sin culpa del receptor"
+          - "Recibida licitamente de un tercero sin restriccion"
+          - "Desarrollada independientemente por el receptor"
+          - "Requerida por ley, regulador o resolucion judicial (con aviso previo)"
+      - clausula: ley_aplicable_jurisdiccion
+        descripcion: "Legislacion espanola y tribunales competentes (o clausula arbitral)"
     clausulas_recomendadas:
-      - "Penalizacion por incumplimiento (clausula penal)"
-      - "Ambito territorial de la obligacion"
-      - "Obligacion de informar empleados y subcontratistas"
-      - "Procedimiento de notificacion de breaches"
-      - "Referencia a Ley 1/2019 Secretos Empresariales"
-      - "Tratamiento de datos personales si aplica (LOPDGDD)"
+      - clausula: penalizaciones
+        descripcion: "Clausula penal por incumplimiento (importe fijo o formula) sin perjuicio de danos adicionales"
+      - clausula: devolucion_destruccion
+        descripcion: "Obligacion de devolver o destruir toda informacion confidencial al termino del acuerdo"
+      - clausula: no_obligacion_negociar
+        descripcion: "El NDA no implica compromiso de cerrar un acuerdo comercial"
+      - clausula: propiedad_intelectual
+        descripcion: "La revelacion no transfiere derechos de PI sobre la informacion confidencial"
+      - clausula: proteccion_datos
+        descripcion: "Si se comparten datos personales: clausula de encargado del tratamiento (RGPD art. 28)"
+      - clausula: medidas_cautelares
+        descripcion: "Derecho a solicitar medidas cautelares ante incumplimiento inminente (Ley 1/2019 arts. 10-12)"
 
 - rule: contract_checklist_obra
   country: ES
-  effective_from: 2026-01-01
+  effective_from: 2000-05-06
   effective_until: null
-  source: "LOE (Ley 38/1999) + CC arts. 1588-1600 + RD 1627/1997 seguridad obras"
+  source: "LOE Ley 38/1999 de Ordenacion de la Edificacion + CC arts. 1588-1600 + CTE RD 314/2006"
   data:
-    tipo_contrato: "obra"
+    titulo: "Checklist contrato de obra (edificacion)"
+    tipo_contrato: obra
     clausulas_obligatorias:
-      - "Identificacion promotor, contratista, director de obra"
-      - "Descripcion detallada de la obra (proyecto, planos, memoria)"
-      - "Precio y forma de pago (precio cerrado, por unidades, administracion)"
-      - "Plazo de ejecucion y penalizaciones por retraso"
-      - "Licencia de obras (responsabilidad del promotor)"
-      - "Seguro de responsabilidad decenal (art. 19 LOE) si es edificacion"
-      - "Plan de seguridad y salud (RD 1627/1997)"
-      - "Recepcion de la obra (acta de recepcion)"
+      - clausula: identificacion_partes
+        descripcion: "Promotor, constructor, direccion facultativa (arquitecto/aparejador). NIF/CIF y habilitacion profesional"
+      - clausula: objeto_obra
+        descripcion: "Descripcion detallada de la obra. Referencia al proyecto basico y de ejecucion visado"
+      - clausula: licencia_urbanistica
+        descripcion: "Licencia de obras concedida por el ayuntamiento como requisito previo al inicio"
+        norma: "Legislacion urbanistica autonomica + LRBRL art. 84"
+      - clausula: precio_y_forma_pago
+        descripcion: "Precio alzado, por unidades de obra o mixto. Certificaciones mensuales. Retencion de garantia (5-10%)"
+        norma: "CC art. 1593 (variaciones de precio) + practica sectorial"
+      - clausula: plazo_ejecucion
+        descripcion: "Fecha inicio y fin de las obras. Hitos parciales si procede"
+      - clausula: penalizaciones_retraso
+        descripcion: "Penalizacion diaria/semanal por retraso imputable al constructor"
+        recomendacion: "0,5-1% del presupuesto por semana de retraso, con limite del 10-15%"
+      - clausula: recepcion_obra
+        descripcion: "Acta de recepcion formal (con o sin reservas). Plazo para subsanar defectos"
+        norma: "LOE art. 6"
+      - clausula: responsabilidad_decenal
+        descripcion: "Responsabilidad legal por defectos segun LOE art. 17"
+        norma: "LOE art. 17"
+        plazos:
+          - plazo: 10_anos
+            alcance: "Defectos estructurales (cimentacion, estructura, soportes)"
+          - plazo: 3_anos
+            alcance: "Defectos de habitabilidad (humedades, aislamientos, instalaciones)"
+          - plazo: 1_ano
+            alcance: "Defectos de terminacion o acabado"
+      - clausula: seguro_obligatorio
+        descripcion: "Seguro decenal obligatorio para edificios destinados a vivienda"
+        norma: "LOE disposicion adicional segunda"
+        notas:
+          - "Seguro de danos materiales decenal (OCT previa obligatoria)"
+          - "Seguro trienal recomendable pero no obligatorio legalmente"
+          - "Seguro de caucion o garantia financiera del constructor"
     clausulas_recomendadas:
-      - "Modificaciones de obra (procedimiento y limites)"
-      - "Subcontratacion (condiciones y limites, Ley 32/2006)"
-      - "Garantias y retencion (5-10% como garantia)"
-      - "Responsabilidad por vicios ocultos (CC art. 1591: 10 anos estructura, 3 anos habitabilidad, 1 ano acabados)"
-      - "Seguro todo riesgo construccion"
-      - "Resolucion por incumplimiento"
-      - "Certificaciones de obra parciales"
+      - clausula: modificaciones_obra
+        descripcion: "Procedimiento para variaciones: orden escrita del director de obra, valoracion previa, aprobacion del promotor"
+      - clausula: subcontratacion
+        descripcion: "Limites y condiciones. Ley 32/2006 de subcontratacion en el sector de la construccion"
+        norma: "Ley 32/2006"
+      - clausula: seguridad_salud
+        descripcion: "Plan de Seguridad y Salud aprobado por el coordinador. Libro de incidencias"
+        norma: "RD 1627/1997"
+      - clausula: resolucion_anticipada
+        descripcion: "Causas de resolucion por ambas partes: incumplimiento grave, insolvencia, fuerza mayor"
+      - clausula: resolucion_conflictos
+        descripcion: "Jurisdiccion civil ordinaria o arbitraje institucional (ej. Tribunal Arbitral de la Edificacion)"
+      - clausula: garantia_adicional
+        descripcion: "Aval bancario por importe del 5-10% del presupuesto hasta recepcion definitiva"
