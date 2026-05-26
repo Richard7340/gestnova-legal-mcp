@@ -50,7 +50,7 @@ class KnowledgeStore:
         pool = await self._get_pool()
         await pool.execute(
             """
-            INSERT INTO legal_knowledge (id, workspace_id, type, jurisdiction, sector, content, created_at, updated_at)
+            INSERT INTO legal_knowledge (id, "workspaceId", type, jurisdiction, sector, content, "createdAt", "updatedAt")
             VALUES ($1, $2::uuid, $3, $4, $5, $6::jsonb, NOW(), NOW())
             """,
             entry_id, workspace_id, content_type, jurisdiction, sector,
@@ -68,10 +68,10 @@ class KnowledgeStore:
     ) -> list[dict[str, Any]]:
         pool = await self._get_pool()
         sql = """
-            SELECT id, type, jurisdiction, sector, content, created_at,
+            SELECT id, type, jurisdiction, sector, content, "createdAt",
                    ts_rank(search_vector, plainto_tsquery('spanish', $2)) AS rank
             FROM legal_knowledge
-            WHERE workspace_id = $1::uuid
+            WHERE "workspaceId" = $1::uuid
               AND search_vector @@ plainto_tsquery('spanish', $2)
         """
         params: list[Any] = [workspace_id, query]
@@ -94,7 +94,7 @@ class KnowledgeStore:
                 "jurisdiction": r["jurisdiction"],
                 "sector": r["sector"],
                 "content": json.loads(r["content"]) if isinstance(r["content"], str) else r["content"],
-                "created_at": r["created_at"].isoformat(),
+                "created_at": r["createdAt"].isoformat(),
                 "rank": float(r["rank"]),
             }
             for r in rows
@@ -108,7 +108,7 @@ class KnowledgeStore:
         limit: int = 50,
     ) -> list[dict[str, Any]]:
         pool = await self._get_pool()
-        sql = "SELECT id, type, jurisdiction, sector, content, created_at FROM legal_knowledge WHERE workspace_id = $1::uuid"
+        sql = 'SELECT id, type, jurisdiction, sector, content, "createdAt" FROM legal_knowledge WHERE "workspaceId" = $1::uuid'
         params: list[Any] = [workspace_id]
         idx = 2
         if content_type:
@@ -119,7 +119,7 @@ class KnowledgeStore:
             sql += f" AND jurisdiction = ${idx}"
             params.append(jurisdiction)
             idx += 1
-        sql += f" ORDER BY created_at DESC LIMIT ${idx}"
+        sql += f' ORDER BY "createdAt" DESC LIMIT ${idx}'
         params.append(limit)
         rows = await pool.fetch(sql, *params)
         return [
@@ -129,7 +129,7 @@ class KnowledgeStore:
                 "jurisdiction": r["jurisdiction"],
                 "sector": r["sector"],
                 "content": json.loads(r["content"]) if isinstance(r["content"], str) else r["content"],
-                "created_at": r["created_at"].isoformat(),
+                "created_at": r["createdAt"].isoformat(),
             }
             for r in rows
         ]

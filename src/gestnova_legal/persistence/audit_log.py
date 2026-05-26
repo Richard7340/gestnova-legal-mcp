@@ -34,7 +34,7 @@ class AuditLog:
         pool = await self._get_pool()
         await pool.execute(
             """
-            INSERT INTO legal_audit_log (id, workspace_id, tool_name, input_args, output_summary, confianza, created_at)
+            INSERT INTO legal_audit_log (id, "workspaceId", "toolName", "inputArgs", "outputSummary", confianza, "createdAt")
             VALUES ($1, $2::uuid, $3, $4::jsonb, $5::jsonb, $6, NOW())
             """,
             entry_id, workspace_id, tool_name,
@@ -48,19 +48,19 @@ class AuditLog:
         pool = await self._get_pool()
         rows = await pool.fetch(
             """
-            SELECT id, tool_name, input_args, output_summary, confianza, created_at
-            FROM legal_audit_log WHERE workspace_id = $1::uuid
-            ORDER BY created_at DESC LIMIT $2
+            SELECT id, "toolName", "inputArgs", "outputSummary", confianza, "createdAt"
+            FROM legal_audit_log WHERE "workspaceId" = $1::uuid
+            ORDER BY "createdAt" DESC LIMIT $2
             """,
             workspace_id, limit,
         )
         return [
             {
                 "id": str(r["id"]),
-                "tool_name": r["tool_name"],
-                "input_args": json.loads(r["input_args"]) if isinstance(r["input_args"], str) else r["input_args"],
+                "tool_name": r["toolName"],
+                "input_args": json.loads(r["inputArgs"]) if isinstance(r["inputArgs"], str) else r["inputArgs"],
                 "confianza": r["confianza"],
-                "created_at": r["created_at"].isoformat(),
+                "created_at": r["createdAt"].isoformat(),
             }
             for r in rows
         ]
