@@ -5,6 +5,7 @@
   source: "ET arts. 2-8 + RDL 32/2021 + RD 1659/1998"
   data:
     titulo: "Checklist contrato de trabajo"
+    tipo_contrato: laboral
     clausulas_obligatorias:
       - clausula: identificacion_partes
         descripcion: "Datos completos del empresario y trabajador (nombre, NIF/NIE, domicilio)"
@@ -49,6 +50,7 @@
   source: "Codigo de Comercio + CC arts. 1254-1258 + Ley 3/2004 morosidad"
   data:
     titulo: "Checklist contrato mercantil (prestacion de servicios / compraventa)"
+    tipo_contrato: mercantil
     clausulas_obligatorias:
       - clausula: identificacion_partes
         descripcion: "Razon social, CIF, domicilio, representante legal y poder"

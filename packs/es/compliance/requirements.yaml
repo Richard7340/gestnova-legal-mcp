@@ -1,0 +1,40 @@
+- rule: legal_compliance_requirements
+  country: ES
+  effective_from: 2023-12-13
+  effective_until: null
+  source: "RGPD 2016/679 + LOPDGDD 3/2018 + Ley 31/1995 PRL + RDL 8/2019 + RD 901/2020 + CP art. 31 bis"
+  data:
+    description: "Requisitos legales obligatorios por sector y plantilla en Espana"
+    rules:
+      - if: {}
+        always_required:
+          - "lopd-rgpd"
+          - "prl-basico"
+          - "registro-horario"
+        reason: "Obligaciones universales para cualquier empresa con trabajadores"
+      - if:
+          workers_min: 6
+        adds:
+          - "delegado-prevencion"
+        reason: "Delegado de prevencion obligatorio a partir de 6 trabajadores (Ley 31/1995 art. 35)"
+      - if:
+          workers_min: 50
+        adds:
+          - "plan-igualdad"
+          - "canal-denuncias"
+          - "comite-empresa"
+        reason: "Plan de igualdad (RD 901/2020), canal de denuncias (Ley 2/2023), comite de empresa (ET art. 63)"
+      - if:
+          workers_min: 250
+        adds:
+          - "estado-info-no-financiera"
+          - "compliance-penal"
+        reason: "Estado de informacion no financiera (Ley 11/2018), compliance penal recomendado"
+      - if:
+          sector_in:
+            - "financiero"
+            - "seguros"
+            - "regulado"
+        adds:
+          - "compliance-penal"
+        reason: "Compliance penal obligatorio en sectores regulados (CP art. 31 bis)"

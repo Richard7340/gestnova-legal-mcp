@@ -1,0 +1,24 @@
+- rule: legal_compliance_requirements
+  country: MX
+  effective_from: 2023-10-23
+  effective_until: null
+  source: "LFPDPPP DOF 05/07/2010 + LFT + NOM-035-STPS-2018 + LSS"
+  data:
+    description: "Requisitos legales obligatorios por plantilla en Mexico"
+    rules:
+      - if: {}
+        always_required:
+          - "aviso-privacidad"
+          - "reglamento-interior"
+          - "alta-imss"
+        reason: "Obligaciones universales para cualquier patron en Mexico"
+      - if:
+          workers_min: 16
+        adds:
+          - "nom-035-nivel2"
+        reason: "NOM-035-STPS-2018 Nivel 2 a partir de 16 trabajadores"
+      - if:
+          workers_min: 51
+        adds:
+          - "nom-035-nivel3"
+        reason: "NOM-035-STPS-2018 Nivel 3 a partir de 51 trabajadores"
