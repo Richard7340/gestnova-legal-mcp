@@ -41,8 +41,11 @@ async def call_tool(req: CallRequest):
 
 
 def main():
-    port = int(os.getenv("PORT", "8015"))
-    uvicorn.run(app, host="127.0.0.1", port=port)
+    # 0.0.0.0 y no 127.0.0.1: dentro de un contenedor, escuchar solo en el
+    # loopback significa que docker lo da por arrancado y nadie puede hablarle.
+    # 8019 y no 8015, que ya es de finance-modeler.
+    port = int(os.getenv("PORT", "8019"))
+    uvicorn.run(app, host="0.0.0.0", port=port)
 
 
 if __name__ == "__main__":

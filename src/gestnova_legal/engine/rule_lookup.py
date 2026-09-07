@@ -1,4 +1,5 @@
 """Load YAML packs and resolve rules by (country, key, date)."""
+import os
 from datetime import date
 from pathlib import Path
 from typing import Any, Optional
@@ -32,6 +33,12 @@ class RuleLookup:
         self._rules: dict[tuple[str, str], list[Rule]] = {}
         self._countries: set[str] = set()
         self._load()
+
+    @property
+    def root(self) -> Path:
+        """Desde donde se cargo. Poder preguntarlo es lo que permite
+        distinguir "no hay norma" de "estoy mirando en la carpeta que no es"."""
+        return self._packs_root
 
     def _load(self) -> None:
         yaml = YAML(typ="safe")
@@ -124,11 +131,32 @@ class RuleLookup:
 _lookup: RuleLookup | None = None
 
 
+def packs_dir() -> Path:
+    """Donde estan los packs de normativa.
+
+    Contar cuatro carpetas hacia arriba desde este fichero solo es cierto
+    corriendo dentro del arbol del repo. Instalado en un contenedor el codigo
+    vive en site-packages y esa cuenta apunta a cualquier sitio: el servidor
+    arranca, /health dice ok, y devuelve CERO normas sin explicar por que.
+
+    Con LEGAL_PACKS_DIR la ruta se declara. Y si no existe se dice en voz alta,
+    porque "no hay legislacion aplicable" y "no encuentro los ficheros" son la
+    misma respuesta vacia con significados opuestos.
+    """
+    declarada = os.environ.get("LEGAL_PACKS_DIR")
+    raiz = Path(declarada) if declarada else Path(__file__).resolve().parents[3] / "packs"
+    if not raiz.is_dir():
+        raise FileNotFoundError(
+            f"No encuentro los packs de normativa en {raiz}. "
+            "Define LEGAL_PACKS_DIR con la carpeta que los contiene."
+        )
+    return raiz
+
+
 def get_lookup() -> RuleLookup:
     global _lookup
     if _lookup is None:
-        packs = Path(__file__).resolve().parent.parent.parent.parent / "packs"
-        _lookup = RuleLookup(packs)
+        _lookup = RuleLookup(packs_dir())
     return _lookup
 
 
